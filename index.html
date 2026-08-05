@@ -140,14 +140,23 @@
                 <span class="hidden md:inline-block text-[0.7rem] md:text-[0.75rem] tracking-[0.2em] font-light uppercase" style="color: var(--text-muted);">Filmmaker & Photographer</span>
             </div>
             <div class="flex items-center gap-6 lg:gap-8 text-[0.8rem] uppercase tracking-[0.15em] font-medium">
+                <nav class="hidden md:flex gap-6">
+                    <a href="#" class="nav-link active">HOME</a>
+                    <a href="#work" class="nav-link">WORK</a>
+                    <a href="#" class="nav-link">STORIES</a>
+                    <a href="#about" class="nav-link">ABOUT</a>
+                    <a href="#contact" class="nav-link">CONTACT</a>
+                </nav>
                 <button id="theme-toggle" class="text-xl focus:outline-none transition-transform hover:scale-110" style="color: var(--text-muted);" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
-                <button id="menu-toggle-btn" class="flex items-center gap-3 focus:outline-none transition-colors hover:text-gray-500 relative" style="color: var(--text-main);" aria-label="Toggle Menu">
-                    <span class="hidden md:inline-block">MENU</span><i class="fa-solid fa-bars text-xl menu-icon"></i>
+                <button class="text-xl focus:outline-none transition-transform hover:scale-110 hidden md:block" style="color: var(--text-muted);"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="menu-toggle-btn" class="flex md:hidden items-center gap-3 focus:outline-none transition-colors hover:text-gray-500 relative" style="color: var(--text-main);" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-xl menu-icon"></i>
                 </button>
                 <div id="compact-menu">
                     <nav class="flex flex-col text-center">
                         <a href="#" class="menu-link nav-item">HOME</a>
                         <a href="#work" class="menu-link nav-item">WORK</a>
+                        <a href="#" class="menu-link nav-item">STORIES</a>
                         <a href="#about" class="menu-link nav-item">ABOUT</a>
                         <a href="#contact" class="menu-link nav-item">CONTACT</a>
                     </nav>
@@ -156,137 +165,223 @@
         </div>
     </header>
 
-    <main class="max-w-[1400px] mx-auto px-6 md:px-12 py-12 md:py-20">
+    <main class="max-w-[1400px] mx-auto px-6 md:px-12 py-10 md:py-16">
 
-        <!-- ヒーロー動画セクション（経験と価値） -->
-        <section class="mb-24 md:mb-32 load-fade-in delay-1">
-            <div class="grid grid-cols-1 gap-6 md:gap-10">
-                <div class="w-full flex flex-col group cursor-play-area project-trigger" 
+        <!-- ヒーローセクション（参考画像風レイアウト） -->
+        <section class="mb-20 md:mb-32 load-fade-in delay-1">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Main Hero Video (経験と価値) -->
+                <div class="md:col-span-2 flex flex-col group cursor-play-area project-trigger" 
                      data-type="video" 
                      data-video-id="ODE8aW-eSyM" 
                      data-title="経験と価値" 
                      data-meta="Cinematic Short Film">
-                    <div class="project-card-container parallax-wrapper aspect-[21/9] md:aspect-[21/9] lg:aspect-[2.35/1] mb-5">
-                        <img src="" alt="経験と価値" class="project-image parallax-img object-cover h-full w-full yt-thumbnail" data-yt-id="ODE8aW-eSyM">
+                    <div class="project-card-container aspect-[16/9] mb-4">
+                        <img src="https://img.youtube.com/vi/ODE8aW-eSyM/maxresdefault.jpg" alt="経験と価値" class="project-image object-cover h-full w-full yt-thumbnail" data-yt-id="ODE8aW-eSyM">
                         <span class="duration-badge"><i class="fa-solid fa-play mr-1"></i> PLAY</span>
-                        <div class="project-overlay">
-                            <p class="overlay-meta text-xs uppercase tracking-widest font-light mb-1">Cinematic Short Film</p>
-                            <h3 class="overlay-title font-serif text-3xl md:text-5xl">経験と価値</h3>
-                        </div>
+                    </div>
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-base md:text-lg font-medium tracking-wider uppercase">経験と価値</h3>
+                    </div>
+                </div>
+                
+                <!-- Sub Hero Image (Nature) -->
+                <div class="md:col-span-1 flex flex-col group project-trigger" 
+                     data-type="gallery" 
+                     data-title="Nature & Landscapes" 
+                     data-meta="Yamagata | Series" 
+                     data-gallery="/images/nature/autumn_leaves.JPG, /images/nature/Domon.JPG">
+                    <div class="project-card-container aspect-[4/3] md:aspect-[4/3] lg:aspect-[16/9] mb-4">
+                        <!-- Cloudflare Pagesでは大文字小文字が厳密に区別されるため、画像ファイル名に合わせます -->
+                        <img src="/images/nature/autumn_leaves.JPG" alt="Nature" class="project-image object-cover h-full w-full">
+                        <div class="gallery-badge"><i class="fa-regular fa-images"></i></div>
+                    </div>
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-sm md:text-base font-medium tracking-wide uppercase">NATURE LANDSCAPES</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="work" class="pt-16 border-t theme-border reveal-up">
-            <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-12 gap-8">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif tracking-wide">SELECTED WORKS</h2>
-                <div class="flex flex-wrap gap-6 md:gap-8" id="portfolio-filters">
-                <span class="filter-tab active" data-filter="all">ALL</span>
-                <span class="filter-tab" data-filter="cinematography">CINEMATOGRAPHY</span>
-                <span class="filter-tab" data-filter="photography">PHOTOGRAPHY</span>
-                <span class="filter-tab" data-filter="animation">ANIMATION</span>
+        <section id="work" class="pt-8 reveal-up">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 gap-6 border-b theme-border pb-4">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-serif tracking-wide uppercase">RECENT PROJECTS</h2>
+                <div class="flex flex-wrap gap-5 md:gap-8" id="portfolio-filters">
+                    <span class="filter-tab active" data-filter="all">ALL</span>
+                    <span class="filter-tab" data-filter="cinematography">CINEMATOGRAPHY</span>
+                    <span class="filter-tab" data-filter="photography">PHOTOGRAPHY</span>
+                    <span class="filter-tab" data-filter="commercials">COMMERCIALS</span>
+                </div>
             </div>
-        </div>
 
-        <div class="masonry-grid" id="portfolio-grid">
-            
-            <!-- Item 1 (Nature Series - 写真ギャラリー) -->
-            <div class="masonry-item photography reveal-up project-trigger" 
-                 data-aspect="1.5" 
-                 data-type="gallery" 
-                 data-title="Nature & Landscapes" 
-                 data-meta="Yamagata | Series" 
-                 data-img="/images/nature/domon.jpg"
-                 data-gallery="/images/nature/domon.jpg, /images/nature/autumn_leaves.jpg, /images/nature/sky.jpg, /images/nature/bridge.jpg">
-                <div class="project-card-container">
-                    <img src="/images/nature/domon.jpg" alt="Nature" class="project-image" loading="lazy">
-                    <!-- ギャラリーアイコン -->
-                    <div class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white w-8 h-8 flex items-center justify-center rounded-full z-10">
-                        <i class="fa-regular fa-images text-sm"></i>
+            <div class="masonry-grid" id="portfolio-grid">
+                
+                <!-- 1. TOKYO ギャラリー -->
+                <div class="masonry-item photography reveal-up project-trigger" 
+                     data-aspect="0.67" 
+                     data-type="gallery" 
+                     data-title="Tokyo Streets" 
+                     data-meta="Street Photography" 
+                     data-gallery="
+                        /images/TOKYO/Timeline%201_03_50_03_20.JPG,
+                        /images/TOKYO/Timeline%201_03_50_26_19.JPG,
+                        /images/TOKYO/Timeline%201_03_50_40_00.JPG
+                     ">
+                    <div class="project-card-container mb-3">
+                        <!-- URL内の空白は %20 のまま使用します -->
+                        <img src="/images/TOKYO/Timeline%201_03_50_03_20.JPG" alt="Tokyo" class="project-image">
+                        <div class="gallery-badge"><i class="fa-regular fa-images"></i></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-info-title">PHOTO: SHINJUKU NIGHTS</h3>
+                        <p class="card-info-desc">Medium | Length: 2:15</p>
+                        <p class="card-info-desc">Hover Effect</p>
                     </div>
                 </div>
-                <div class="card-info">
-                    <h3 class="card-info-title">PHOTO: NATURE SERIES</h3>
-                    <p class="card-info-desc">Yamagata | Landscape</p>
-                </div>
-            </div>
 
-            <!-- Item 2 (Video) -->
-            <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" 
-                 data-aspect="1.77" 
-                 data-type="video" 
-                 data-video-id="Lcjw5NQooYM"
-                 data-title="Autumn in Japan" 
-                 data-meta="Cinematic Vlog">
-                <div class="project-card-container">
-                    <img src="https://img.youtube.com/vi/Lcjw5NQooYM/maxresdefault.jpg" alt="Autumn" class="project-image" loading="lazy">
-                    <span class="duration-badge"><i class="fa-solid fa-play mr-1"></i> PLAY</span>
-                </div>
-                <div class="card-info">
-                    <h3 class="card-info-title">VIDEO: AUTUMN IN JAPAN</h3>
-                    <p class="card-info-desc">Cinematic Vlog | 4K</p>
-                </div>
-            </div>
-
-            <!-- Item 3 (Dog - 写真ギャラリー) -->
-            <div class="masonry-item photography reveal-up project-trigger" 
-                 data-aspect="1" 
-                 data-type="gallery" 
-                 data-title="Life with Dog" 
-                 data-meta="Lifestyle | Portrait" 
-                 data-img="/images/dog/dscf1960.jpg"
-                 data-gallery="/images/dog/dscf1960.jpg, /images/dog/dscf2126.jpg, /images/dog/dscf2238.jpg, /images/dog/img_1993.jpg">
-                <div class="project-card-container">
-                    <img src="/images/dog/dscf1960.jpg" alt="Dog" class="project-image object-cover aspect-square" loading="lazy">
-                    <div class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white w-8 h-8 flex items-center justify-center rounded-full z-10">
-                        <i class="fa-regular fa-images text-sm"></i>
+                <!-- 2. Video: Hokkaido (Placeholder id) -->
+                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" 
+                     data-aspect="1.77" 
+                     data-type="video" 
+                     data-video-id="Lcjw5NQooYM"
+                     data-title="Exploring Hokkaido" 
+                     data-meta="Cinematic Vlog">
+                    <div class="project-card-container mb-3">
+                        <img src="https://img.youtube.com/vi/Lcjw5NQooYM/maxresdefault.jpg" alt="Autumn" class="project-image yt-thumbnail" data-yt-id="Lcjw5NQooYM">
+                        <span class="duration-badge"><i class="fa-solid fa-play"></i></span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-info-title">VIDEO: EXPLORING HOKKAIDO</h3>
+                        <p class="card-info-desc">Medium | Length: 3:40</p>
+                        <p class="card-info-desc">Hover Effect</p>
                     </div>
                 </div>
-                <div class="card-info">
-                    <h3 class="card-info-title">PHOTO: LIFE WITH DOG</h3>
-                    <p class="card-info-desc">Portrait | Lifestyle</p>
+
+                <!-- 3. Portrait ギャラリー -->
+                <div class="masonry-item photography reveal-up project-trigger" 
+                     data-aspect="1" 
+                     data-type="gallery" 
+                     data-title="Artisan's Hands" 
+                     data-meta="Portrait" 
+                     data-gallery="
+                        /images/portrait/IMG_1757.JPG,
+                        /images/portrait/DSC06648.JPG
+                     ">
+                    <div class="project-card-container mb-3">
+                        <img src="/images/portrait/IMG_1757.JPG" alt="Portrait" class="project-image object-cover aspect-square">
+                        <div class="gallery-badge"><i class="fa-regular fa-images"></i></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-info-title">PHOTO: ARTISAN'S HANDS</h3>
+                        <p class="card-info-desc">Medium | Length: 3:40</p>
+                        <p class="card-info-desc">Hover Effect</p>
+                    </div>
                 </div>
+
+                 <!-- 4. Video: Urban Beat -->
+                 <div class="masonry-item commercials cursor-play-area reveal-up project-trigger" 
+                     data-aspect="1.77" 
+                     data-type="video" 
+                     data-video-id="5ILh0I_STOU"
+                     data-title="Urban Beat" 
+                     data-meta="Short Film">
+                    <div class="project-card-container mb-3">
+                        <img src="https://img.youtube.com/vi/5ILh0I_STOU/maxresdefault.jpg" alt="Winter" class="project-image yt-thumbnail" data-yt-id="5ILh0I_STOU">
+                        <span class="duration-badge"><i class="fa-solid fa-play"></i></span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-info-title">VIDEO: URBAN BEAT | 1:12</h3>
+                        <p class="card-info-desc">Medium | Length: 1:12</p>
+                        <p class="card-info-desc">Hover Effect</p>
+                    </div>
+                </div>
+
+                <!-- 5. NATURE ギャラリー -->
+                <div class="masonry-item photography reveal-up project-trigger" 
+                     data-aspect="1.5" 
+                     data-type="gallery" 
+                     data-title="Autumn Temple" 
+                     data-meta="Yamagata | Series" 
+                     data-gallery="
+                        /images/nature/Domon.JPG,
+                        /images/nature/bridge.JPG,
+                        /images/nature/sky.JPG
+                     ">
+                    <div class="project-card-container mb-3">
+                        <img src="/images/nature/Domon.JPG" alt="Nature" class="project-image">
+                        <div class="gallery-badge"><i class="fa-regular fa-images"></i></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-info-title">PHOTO: AUTUMN TEMPLE</h3>
+                        <p class="card-info-desc">Medium | Length: 3:10</p>
+                        <p class="card-info-desc">Hover Effect</p>
+                    </div>
+                </div>
+
+                 <!-- 6. Video: Voices of the City -->
+                 <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" 
+                     data-aspect="0.8" 
+                     data-type="video" 
+                     data-video-id="qjfgR4MHwkI"
+                     data-title="Voices of the City" 
+                     data-meta="Cinematic Vlog">
+                    <div class="project-card-container mb-3">
+                        <img src="https://img.youtube.com/vi/qjfgR4MHwkI/maxresdefault.jpg" alt="City" class="project-image object-cover aspect-[4/5] yt-thumbnail" data-yt-id="qjfgR4MHwkI">
+                        <span class="duration-badge"><i class="fa-solid fa-play"></i></span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-info-title">VIDEO: VOICES OF THE CITY | 5:00</h3>
+                        <p class="card-info-desc">Hover Effect</p>
+                    </div>
+                </div>
+
+                <!-- 7. SUBMERGED FOREST ギャラリー -->
+                <div class="masonry-item photography reveal-up project-trigger" 
+                     data-aspect="1.77" 
+                     data-type="gallery" 
+                     data-title="Submerged Forest" 
+                     data-meta="Landscape | Yamagata" 
+                     data-gallery="
+                        /images/submerged_forest/Timeline%201_01_00_26_16.JPG,
+                        /images/submerged_forest/Timeline%201_01_00_23_17.JPG,
+                        /images/submerged_forest/Timeline%201_01_00_27_14.JPG
+                     ">
+                    <div class="project-card-container mb-3">
+                        <img src="/images/submerged_forest/Timeline%201_01_00_26_16.JPG" alt="Forest" class="project-image">
+                        <div class="gallery-badge"><i class="fa-regular fa-images"></i></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-info-title">PHOTO: SUBMERGED FOREST</h3>
+                        <p class="card-info-desc">Water | Landscape</p>
+                    </div>
+                </div>
+
+                <!-- 8. DOG ギャラリー -->
+                <div class="masonry-item photography reveal-up project-trigger" 
+                     data-aspect="1.33" 
+                     data-type="gallery" 
+                     data-title="Life with Dog" 
+                     data-meta="Lifestyle | Portrait" 
+                     data-gallery="
+                        /images/dog/DSCF1960.jpg,
+                        /images/dog/DSCF2126.jpg,
+                        /images/dog/DSCF2238.JPG,
+                        /images/dog/IMG_1993.JPG
+                     ">
+                    <div class="project-card-container mb-3">
+                        <img src="/images/dog/DSCF1960.jpg" alt="Dog" class="project-image">
+                        <div class="gallery-badge"><i class="fa-regular fa-images"></i></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-info-title">PHOTO: LIFE WITH DOG</h3>
+                        <p class="card-info-desc">Portrait | Lifestyle</p>
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-             <!-- Item 4 (Video) -->
-             <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" 
-                 data-aspect="1.77" 
-                 data-type="video" 
-                 data-video-id="5ILh0I_STOU"
-                 data-title="Winter Chronicles" 
-                 data-meta="Short Film">
-                <div class="project-card-container">
-                    <img src="https://img.youtube.com/vi/5ILh0I_STOU/maxresdefault.jpg" alt="Winter" class="project-image" loading="lazy">
-                    <span class="duration-badge"><i class="fa-solid fa-play mr-1"></i> PLAY</span>
-                </div>
-                <div class="card-info">
-                    <h3 class="card-info-title">VIDEO: WINTER CHRONICLES</h3>
-                    <p class="card-info-desc">Short Film | Hokkaido</p>
-                </div>
-            </div>
-
-             <!-- Item 5 (Animation) -->
-             <div class="masonry-item animation cursor-play-area reveal-up project-trigger" 
-                 data-aspect="1.77" 
-                 data-type="video" 
-                 data-video-id="NzCtwsILJYg"
-                 data-title="Motion Graphics" 
-                 data-meta="Animation Showreel">
-                <div class="project-card-container">
-                    <img src="https://img.youtube.com/vi/NzCtwsILJYg/maxresdefault.jpg" alt="Animation" class="project-image" loading="lazy">
-                    <span class="duration-badge"><i class="fa-solid fa-play mr-1"></i> PLAY</span>
-                </div>
-                <div class="card-info">
-                    <h3 class="card-info-title">ANIMATION WORKS</h3>
-                    <p class="card-info-desc">Motion Graphics</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-</main>
+    </main>
 
     <footer class="border-t theme-border py-10 px-6 md:px-12 mt-20 theme-bg reveal-up">
         <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
@@ -401,66 +496,41 @@
             const mediaContainer = document.getElementById('modal-media-container');
             const modalTitle = document.getElementById('modal-title');
             const modalMeta = document.getElementById('modal-meta');
-        const modalPlayIcon = document.getElementById('modal-play-icon');
 
-        const openModal = (e) => {
-            const trigger = e.currentTarget;
-            const type = trigger.getAttribute('data-type');
-            
-            // Populate modal data
-            modalTitle.textContent = trigger.getAttribute('data-title');
-            modalMeta.textContent = trigger.getAttribute('data-meta');
-            
-            // 一旦コンテナの中身を空にする
-            const imgContainer = modalImg.parentElement;
-            imgContainer.innerHTML = '<i id="modal-play-icon" class="fa-solid fa-play text-white text-5xl absolute opacity-0 transition-opacity drop-shadow-lg z-10 pointer-events-none"></i>';
-            const playIcon = imgContainer.querySelector('#modal-play-icon');
-            
-            if (type === 'video') {
-                const videoId = trigger.getAttribute('data-video-id');
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-                iframe.className = "w-full h-full absolute inset-0";
-                iframe.setAttribute('frameborder', '0');
-                iframe.setAttribute('allow', 'autoplay; fullscreen');
-                imgContainer.appendChild(iframe);
-                playIcon.style.opacity = '0';
-            } 
-            else if (type === 'gallery') {
-                // カンマ区切りの画像URLを取得して、縦に並べる
-                const rawGallery = trigger.getAttribute('data-gallery');
-                if (rawGallery) {
-                    const imageUrls = rawGallery.split(',').map(url => url.trim()).filter(url => url !== '');
-                    
-                    // スクロールできるようにコンテナの高さを自動に
-                    imgContainer.classList.remove('aspect-[16/9]');
-                    imgContainer.classList.add('flex-col', 'gap-4', 'h-auto', 'max-h-[70vh]', 'overflow-y-auto');
-                    
-                    imageUrls.forEach(url => {
-                        const img = document.createElement('img');
-                        img.src = url;
-                        img.className = 'w-full h-auto object-contain rounded bg-[var(--card-placeholder)]';
-                        img.loading = 'lazy';
-                        imgContainer.appendChild(img);
-                    });
+            const openModal = (e) => {
+                const trigger = e.currentTarget;
+                const type = trigger.getAttribute('data-type');
+                
+                modalTitle.textContent = trigger.getAttribute('data-title');
+                modalMeta.textContent = trigger.getAttribute('data-meta');
+                mediaContainer.innerHTML = ''; 
+                
+                if (type === 'video') {
+                    const videoId = trigger.getAttribute('data-video-id');
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'video-wrapper';
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+                    wrapper.appendChild(iframe);
+                    mediaContainer.appendChild(wrapper);
+                } else if (type === 'gallery') {
+                    const rawGallery = trigger.getAttribute('data-gallery');
+                    if (rawGallery) {
+                        const imageUrls = rawGallery.split(',').map(url => url.trim()).filter(url => url !== '');
+                        imageUrls.forEach(url => {
+                            const img = document.createElement('img');
+                            img.src = url;
+                            img.className = 'w-full h-auto object-contain rounded bg-[var(--card-placeholder)] shadow-lg';
+                            img.loading = 'lazy'; // スクロールで遅延読み込み
+                            mediaContainer.appendChild(img);
+                        });
+                    }
                 }
-                playIcon.style.opacity = '0';
-            }
-            else {
-                // 単一の画像（従来通り）
-                const img = document.createElement('img');
-                img.id = "modal-img";
-                img.src = trigger.getAttribute('data-img');
-                img.className = 'w-full h-full object-cover';
-                imgContainer.appendChild(img);
-                imgContainer.classList.add('aspect-[16/9]');
-                imgContainer.classList.remove('flex-col', 'gap-4', 'h-auto', 'max-h-[70vh]', 'overflow-y-auto');
-                playIcon.style.opacity = '0';
-            }
 
-            // Show modal and prevent body scroll
-            modal.classList.add('open');
-            document.body.style.overflow = 'hidden';
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
                 if(cursor) cursor.style.display = 'none';
                 modal.scrollTop = 0;
             };
