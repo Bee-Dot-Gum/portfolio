@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REN AIZAWA | FILMMAKER & PHOTOGRAPHER</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- GSAP & Lenis (パララックス & 慣性スクロール用) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
@@ -41,16 +35,7 @@
             --card-placeholder: #222222;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            transition: background-color 0.4s ease, color 0.4s ease;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            cursor: auto;
-        }
-        
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); transition: background-color 0.4s ease, color 0.4s ease; -webkit-font-smoothing: antialiased; overflow-x: hidden; cursor: auto; }
         .font-serif { font-family: 'Playfair Display', serif; }
         .theme-border { transition: border-color 0.4s ease; border-color: var(--border-color); }
         .theme-bg { background-color: var(--bg-color); transition: background-color 0.4s ease; }
@@ -60,7 +45,6 @@
         .nav-link::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 1px; bottom: 0; left: 0; background-color: var(--accent-color); transform-origin: bottom right; transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); transform-origin: bottom left; }
 
-        /* フィルタータブのデザイン */
         .filter-tab { position: relative; padding-bottom: 6px; cursor: pointer; color: var(--text-muted); transition: color 0.3s ease; font-size: 0.85rem; letter-spacing: 0.05em; font-weight: 400; text-transform: uppercase; }
         .filter-tab:hover, .filter-tab.active { color: var(--text-main); }
         .filter-tab.active { font-weight: 600; }
@@ -69,12 +53,10 @@
 
         .project-card-container { position: relative; overflow: hidden; border-radius: 4px; cursor: pointer; background-color: var(--card-placeholder); transition: background-color 0.4s ease; }
         .project-image { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s cubic-bezier(0.21, 1, 0.32, 1); will-change: transform; }
-        
         .project-card-container:hover .project-image { transform: scale(1.03); }
 
         .gallery-badge { position: absolute; top: 12px; right: 12px; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px); color: white; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; z-index: 5; transition: opacity 0.3s ease; }
         .project-card-container:hover .gallery-badge { opacity: 0; }
-        
         .duration-badge { position: absolute; bottom: 12px; right: 12px; background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(4px); color: white; padding: 4px 10px; font-size: 0.75rem; font-weight: 500; border-radius: 4px; z-index: 5; transition: opacity 0.3s ease; }
         .project-card-container:hover .duration-badge { opacity: 0; }
 
@@ -82,10 +64,9 @@
         .card-info-title { font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
         .card-info-desc { font-size: 0.75rem; color: var(--text-muted); font-weight: 300; transition: color 0.4s ease; }
 
-        /* Masonry & Isotope Shuffle Animation */
         .masonry-grid { position: relative; width: 100%; transition: height 0.5s cubic-bezier(0.21, 1, 0.32, 1); }
         .masonry-item { position: absolute; transition: transform 0.6s cubic-bezier(0.21, 1, 0.32, 1), opacity 0.4s ease; width: 100%; will-change: transform, opacity; }
-        .masonry-item.hidden { opacity: 0; pointer-events: none; transform: scale(0.9) translateY(20px) !important; } /* シャッフル時に小さく消える */
+        .masonry-item.hidden { opacity: 0; pointer-events: none; transform: scale(0.9) translateY(20px) !important; }
 
         .reveal-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.21, 1, 0.32, 1), transform 0.8s cubic-bezier(0.21, 1, 0.32, 1); }
         .reveal-up.is-visible { opacity: 1; transform: translateY(0); }
@@ -94,47 +75,24 @@
         .delay-1 { animation-delay: 0.2s; }
         @keyframes loadFadeIn { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
 
-        /* Parallax Setup */
         .parallax-wrapper { overflow: hidden; position: relative; }
-        .parallax-img { height: 120%; width: 100%; object-fit: cover; top: -10%; position: relative; } /* 上下に余裕を持たせる */
+        .parallax-img { height: 120%; width: 100%; object-fit: cover; top: -10%; position: relative; }
 
-        /* ホバー自動再生用のiframeスタイル */
-        .hover-video-iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; z-index: 10; opacity: 0; transition: opacity 0.6s ease; object-fit: cover; transform: scale(1.1); /* 黒帯隠し */ }
+        .hover-video-iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; z-index: 10; opacity: 0; transition: opacity 0.6s ease; object-fit: cover; transform: scale(1.1); }
         .hover-video-iframe.show { opacity: 1; }
-
         @media (pointer: fine) { .cursor-play-area .project-card-container { cursor: none; } }
         
-        /* カスタムカーソル（案B: サークル・エクスパンド） */
-        #custom-cursor { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 12px; 
-            height: 12px; 
-            background-color: white; 
-            border: 1px solid transparent;
-            border-radius: 50%; 
-            pointer-events: none; 
-            z-index: 9999; 
-            opacity: 0; 
-            transition: width 0.4s cubic-bezier(0.21, 1, 0.32, 1), height 0.4s cubic-bezier(0.21, 1, 0.32, 1), background-color 0.4s ease, border-color 0.4s ease, opacity 0.3s ease; 
-            mix-blend-mode: difference; 
-        }
-        #custom-cursor.active { 
-            width: 80px; 
-            height: 80px; 
-            background-color: transparent; 
-            border-color: rgba(255, 255, 255, 0.8);
-        }
+        /* 案B: 濁りのない「サークル・エクスパンド」カーソル */
+        #custom-cursor { position: fixed; top: 0; left: 0; width: 8px; height: 8px; background-color: white; border: 1px solid transparent; border-radius: 50%; pointer-events: none; z-index: 9999; opacity: 0; transition: width 0.4s cubic-bezier(0.21, 1, 0.32, 1), height 0.4s cubic-bezier(0.21, 1, 0.32, 1), background-color 0.4s ease, border-color 0.4s ease, opacity 0.3s ease; mix-blend-mode: difference; }
+        #custom-cursor.active { width: 80px; height: 80px; background-color: transparent; border-color: white; border-width: 1.5px; }
 
-        /* モーダル */
         #project-modal { position: fixed; inset: 0; background-color: var(--overlay-bg); backdrop-filter: blur(15px); z-index: 10000; display: block; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; overflow-y: auto; -webkit-overflow-scrolling: touch; }
         #project-modal.open { opacity: 1; pointer-events: auto; }
-        .modal-content { width: 100%; max-width: 1000px; margin: 0 auto; padding: 5rem 1.5rem; transform: translateY(30px); transition: transform 0.6s cubic-bezier(0.21, 1, 0.32, 1); transition-delay: 0.1s; min-height: 100%; }
+        .modal-content { width: 100%; max-width: 1000px; margin: 0 auto; padding: 5rem 1.5rem; transform: translateY(30px); transition: transform 0.6s cubic-bezier(0.21, 1, 0.32, 1); transition-delay: 0.1s; min-height: 100vh; display: flex; flex-direction: column; }
         #project-modal.open .modal-content { transform: translateY(0); }
         .modal-close-btn { position: fixed; top: 2rem; right: 2rem; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; z-index: 10001; }
         .modal-close-btn:hover { background: var(--text-main); color: var(--bg-color); transform: rotate(90deg); }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%; background: #000; border-radius: 8px; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%; background: #000; border-radius: 8px; flex-shrink: 0; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         #preloader { position: fixed; inset: 0; z-index: 100000; background-color: var(--bg-color); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, visibility 0.8s ease; }
@@ -165,36 +123,17 @@
 
     <main class="max-w-[1400px] mx-auto px-6 md:px-12 py-12 md:py-20">
 
-        <!-- ヒーロー動画セクション（経験と価値） -->
         <section class="mb-24 md:mb-32 load-fade-in delay-1">
             <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-6 md:gap-10">
-                <!-- メインの特大動画 (パララックス効果あり) -->
-                <div class="w-full flex flex-col group cursor-play-area project-trigger cinematography" 
-                     data-type="video" 
-                     data-video-id="Lcjw5NQooYM" 
-                     data-title="経験と価値" 
-                     data-meta="Cinematic Short Film">
+                <div class="w-full flex flex-col group cursor-play-area project-trigger cinematography" data-type="video" data-video-id="Lcjw5NQooYM" data-title="経験と価値" data-meta="Cinematic Short Film">
                     <div class="project-card-container parallax-wrapper aspect-video md:aspect-[16/10] mb-5">
-                        <img src="" alt="経験と価値" class="project-image parallax-img yt-thumbnail" data-yt-id="Lcjw5NQooYM">
-                        <span class="duration-badge"><i class="fa-solid fa-play mr-1"></i> PLAY</span>
+                        <img src="" alt="経験と価値" class="project-image parallax-img yt-thumbnail" data-yt-id="Lcjw5NQooYM" loading="lazy" decoding="async">
                     </div>
-                    <div class="card-info">
-                        <h3 class="card-info-title text-xl font-serif">経験と価値</h3>
-                        <p class="card-info-desc">Cinematic Short Film</p>
-                    </div>
+                    <div class="card-info"><h3 class="card-info-title text-xl font-serif">経験と価値</h3><p class="card-info-desc">Cinematic Short Film</p></div>
                 </div>
-
-                <!-- サブの画像 -->
-                <div class="hidden md:flex flex-col group project-trigger photography"
-                     data-type="gallery" 
-                     data-title="Nature & Landscapes" 
-                     data-meta="Yamagata | Series" 
-                     data-gallery="
-                        images/nature/Domon.JPG,
-                        images/nature/autumn_leaves.JPG
-                     ">
+                <div class="hidden md:flex flex-col group project-trigger landscape" data-type="gallery" data-title="Nature & Landscapes" data-meta="Yamagata | Series" data-gallery="images/nature/autumn_leaves.JPG, images/nature/Domon.JPG">
                     <div class="project-card-container parallax-wrapper aspect-[4/3] h-full mb-5">
-                        <img src="images/nature/autumn_leaves.JPG" alt="Nature" class="project-image parallax-img">
+                        <img src="images/nature/autumn_leaves.JPG" alt="Nature" class="project-image parallax-img" loading="lazy" decoding="async">
                         <div class="gallery-badge"><i class="fa-regular fa-images"></i></div>
                     </div>
                 </div>
@@ -202,128 +141,143 @@
         </section>
 
         <section id="work" class="pt-16 border-t theme-border reveal-up">
-            <!-- 復活したフィルターメニュー -->
             <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-12 gap-8">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif tracking-wide">RECENT PROJECTS</h2>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif tracking-wide">SELECTED WORKS</h2>
                 <div class="flex flex-wrap gap-4 md:gap-6" id="filters">
                     <button class="filter-tab active" data-filter="all">ALL</button>
                     <button class="filter-tab" data-filter="cinematography">CINEMATOGRAPHY</button>
-                    <button class="filter-tab" data-filter="photography">PHOTOGRAPHY</button>
-                    <button class="filter-tab" data-filter="animation">ANIMATION</button>
+                    <button class="filter-tab" data-filter="portrait">PORTRAIT</button>
+                    <button class="filter-tab" data-filter="landscape">LANDSCAPE</button>
+                    <button class="filter-tab" data-filter="street">STREET & LIFE</button>
+                    <button class="filter-tab" data-filter="creative">CREATIVE</button>
                 </div>
             </div>
 
-            <!-- ギャラリー本体 -->
             <div class="masonry-grid" id="portfolio-grid">
                 
-                <!-- 1. NATURE -->
-                <div class="masonry-item photography reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Nature & Landscapes" data-meta="Yamagata | Series" 
-                     data-gallery="images/nature/Domon.JPG, images/nature/Domon2.JPG, images/nature/Domon3.JPG, images/nature/autumn_leaves.JPG, images/nature/autumn_leaves2.JPG, images/nature/autumn_leaves3.JPG, images/nature/bridge.JPG, images/nature/key.JPG, images/nature/shadow.JPG, images/nature/shadow2.JPG, images/nature/sky.JPG, images/nature/tree.JPG, images/nature/tree_1.JPG, images/nature/tree_2.JPG">
-                    <div class="project-card-container parallax-wrapper"><img src="images/nature/Domon.JPG" alt="Nature" class="project-image parallax-img"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">PHOTO: NATURE SERIES</h3><p class="card-info-desc">Yamagata | Landscape</p></div>
-                </div>
-
-                <!-- 2. Video 1 -->
                 <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="ODE8aW-eSyM" data-title="Autumn in Japan" data-meta="Cinematic Vlog">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Autumn" class="project-image parallax-img yt-thumbnail" data-yt-id="ODE8aW-eSyM"><span class="duration-badge"><i class="fa-solid fa-play"></i></span></div>
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Autumn" class="project-image parallax-img yt-thumbnail" data-yt-id="ODE8aW-eSyM" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: AUTUMN IN JAPAN</h3><p class="card-info-desc">Cinematic Vlog | 4K</p></div>
                 </div>
-
-                <!-- 3. DOG -->
-                <div class="masonry-item photography reveal-up project-trigger" data-aspect="1" data-type="gallery" data-title="Life with Dog" data-meta="Lifestyle | Portrait" 
-                     data-gallery="images/dog/DSCF1910.JPG, images/dog/DSCF1960.jpg, images/dog/DSCF2126.jpg, images/dog/DSCF2237.JPG, images/dog/DSCF2238.JPG, images/dog/IMG_1993.JPG, images/dog/IMG_2857.JPG, images/dog/home.JPG">
-                    <div class="project-card-container parallax-wrapper"><img src="images/dog/DSCF1960.jpg" alt="Dog" class="project-image parallax-img"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">PHOTO: LIFE WITH DOG</h3><p class="card-info-desc">Portrait | Lifestyle</p></div>
+                
+                <!-- PORTRAIT -->
+                <div class="masonry-item portrait reveal-up project-trigger" data-aspect="0.67" data-type="gallery" data-title="Portraits" data-meta="People | Series" 
+                     data-gallery="images/portrait/DSC00865%202.JPG, images/portrait/DSC01544.jpg, images/portrait/DSC06575.jpg, images/portrait/DSC06648.JPG, images/portrait/DSC06672%202.JPG, images/portrait/DSC06744.JPG, images/portrait/DSC06791.JPG, images/portrait/IMG_1757.JPG, images/portrait/IMG_1992.jpg, images/portrait/adult.jpg">
+                    <div class="project-card-container parallax-wrapper"><img src="images/portrait/IMG_1757.JPG" alt="Portrait" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">PORTRAIT: LIGHT & SHADOW</h3><p class="card-info-desc">People | Studio & Outdoor</p></div>
                 </div>
 
-                 <!-- 4. Video 2 -->
-                 <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="5ILh0I_STOU" data-title="Winter Chronicles" data-meta="Short Film">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Winter" class="project-image parallax-img yt-thumbnail" data-yt-id="5ILh0I_STOU"><span class="duration-badge"><i class="fa-solid fa-play"></i></span></div>
+                <!-- LANDSCAPE: Nature -->
+                <div class="masonry-item landscape reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Breath of Nature" data-meta="Landscape | Series" 
+                     data-gallery="images/nature/Domon.JPG, images/nature/Domon2.JPG, images/nature/Timeline%201_01_00_32_04.jpg, images/nature/autumn_leaves.JPG, images/nature/autumn_leaves2.JPG, images/nature/shadow.JPG, images/nature/shadow2.JPG, images/nature/sky.JPG, images/nature/tree_1.JPG, images/nature/tree_2.JPG">
+                    <div class="project-card-container parallax-wrapper"><img src="images/nature/Domon.JPG" alt="Nature" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">NATURE: BREATH OF NATURE</h3><p class="card-info-desc">Yamagata | Landscape</p></div>
+                </div>
+
+                <!-- STREET & LIFE: Dog -->
+                <div class="masonry-item street reveal-up project-trigger" data-aspect="1" data-type="gallery" data-title="Life with Dog" data-meta="Lifestyle | Portrait" 
+                     data-gallery="images/dog/Bee11.jpg, images/dog/Bee12.jpg, images/dog/DSC00341.jpg, images/dog/DSC00760.jpg, images/dog/DSC05783.jpg, images/dog/DSC06661.jpg, images/dog/DSCF1960.jpg, images/dog/DSCF2126.jpg, images/dog/IMG_1993.JPG, images/dog/home.JPG">
+                    <div class="project-card-container parallax-wrapper"><img src="images/dog/DSCF1960.jpg" alt="Dog" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">LIFE WITH DOG</h3><p class="card-info-desc">Portrait | Lifestyle</p></div>
+                </div>
+
+                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="5ILh0I_STOU" data-title="Winter Chronicles" data-meta="Short Film">
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Winter" class="project-image parallax-img yt-thumbnail" data-yt-id="5ILh0I_STOU" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: WINTER CHRONICLES</h3></div>
                 </div>
 
-                <!-- 5. PORTRAIT -->
-                <div class="masonry-item photography reveal-up project-trigger" data-aspect="0.67" data-type="gallery" data-title="Portraits" data-meta="People | Series" 
-                     data-gallery="images/portrait/DSC00865%202.JPG, images/portrait/DSC06648.JPG, images/portrait/DSC06672%202.JPG, images/portrait/DSC06744.JPG, images/portrait/DSC06791.JPG, images/portrait/IMG_1757.JPG, images/portrait/IMG_6037.JPG">
-                    <div class="project-card-container parallax-wrapper"><img src="images/portrait/IMG_1757.JPG" alt="Portrait" class="project-image parallax-img"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">PHOTO: PORTRAITS</h3><p class="card-info-desc">People | Studio & Outdoor</p></div>
+                <!-- STREET & LIFE: Tokyo -->
+                <div class="masonry-item street reveal-up project-trigger" data-aspect="1.33" data-type="gallery" data-title="Tokyo Streets" data-meta="Urban | Night" 
+                     data-gallery="images/TOKYO/Timeline%201_01_24_09_16.jpg, images/TOKYO/Timeline%201_01_36_06_09.jpg, images/TOKYO/Timeline%201_03_50_03_20.JPG, images/TOKYO/Timeline%201_03_50_26_19.JPG, images/TOKYO/Timeline%201_03_50_40_00.JPG">
+                    <div class="project-card-container parallax-wrapper"><img src="images/TOKYO/Timeline%201_03_50_03_20.JPG" alt="Tokyo" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">URBAN: TOKYO STREETS</h3><p class="card-info-desc">Urban Geometry | Night</p></div>
                 </div>
 
-                 <!-- 6. Video 3 -->
-                 <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="qjfgR4MHwkI" data-title="City Lights" data-meta="Cinematic Vlog">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="City" class="project-image parallax-img yt-thumbnail" data-yt-id="qjfgR4MHwkI"><span class="duration-badge"><i class="fa-solid fa-play"></i></span></div>
+                <!-- CREATIVE: Fragments -->
+                <div class="masonry-item creative reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Fragments" data-meta="Still Life & Moments" 
+                     data-gallery="images/fragments/DSC02610.jpg, images/fragments/DSC04839.jpg, images/fragments/Glass.jpg, images/fragments/Gozira.jpg, images/fragments/Scissors.jpg, images/fragments/Takadate.jpg, images/fragments/cap.jpg">
+                    <div class="project-card-container parallax-wrapper"><img src="images/fragments/DSC04839.jpg" alt="Fragments" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">FRAGMENTS</h3><p class="card-info-desc">Still Life | Moments</p></div>
+                </div>
+
+                <!-- LANDSCAPE: Shrine -->
+                <div class="masonry-item landscape reveal-up project-trigger" data-aspect="0.67" data-type="gallery" data-title="Sacred Silence" data-meta="Shrines & Temples" 
+                     data-gallery="images/shrine/FortuneSlip.JPG, images/shrine/Ginzan.jpg, images/shrine/Ginzan2jpg.jpg, images/shrine/Haguro.jpg, images/shrine/Omairi.jpg, images/shrine/grass10.jpg">
+                    <div class="project-card-container parallax-wrapper"><img src="images/shrine/Haguro.jpg" alt="Shrine" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">SACRED SILENCE</h3><p class="card-info-desc">Shrines & Temples</p></div>
+                </div>
+
+                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="qjfgR4MHwkI" data-title="City Lights" data-meta="Cinematic Vlog">
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="City" class="project-image parallax-img yt-thumbnail" data-yt-id="qjfgR4MHwkI" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: CITY LIGHTS</h3></div>
                 </div>
 
-                <!-- 追加動画 A -->
+                <!-- CREATIVE: Expo -->
+                <div class="masonry-item creative reveal-up project-trigger" data-aspect="1.77" data-type="gallery" data-title="Exhibition" data-meta="Event & Space" 
+                     data-gallery="images/expo/Timeline%201_01_00_01_07.jpg, images/expo/Timeline%201_01_01_44_11.jpg, images/expo/Timeline%201_01_09_51_16.jpg, images/expo/Timeline%201_01_12_17_17.jpg, images/expo/Timeline%201_01_13_33_12.jpg, images/expo/Timeline%201_01_15_54_09.jpg, images/expo/Timeline%201_01_20_06_16.jpg">
+                    <div class="project-card-container parallax-wrapper"><img src="images/expo/Timeline%201_01_01_44_11.jpg" alt="Expo" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">EXHIBITION SPACE</h3><p class="card-info-desc">Event | Space</p></div>
+                </div>
+
+                <!-- LANDSCAPE: Submerged Forest -->
+                <div class="masonry-item landscape reveal-up project-trigger" data-aspect="1.77" data-type="gallery" data-title="Submerged Forest" data-meta="Landscape | Yamagata" 
+                     data-gallery="images/submerged_forest/Timeline%201_01_00_23_17.JPG, images/submerged_forest/Timeline%201_01_00_26_16.JPG, images/submerged_forest/Timeline%201_01_00_27_14.JPG">
+                    <div class="project-card-container parallax-wrapper"><img src="images/submerged_forest/Timeline%201_01_00_26_16.JPG" alt="Forest" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">SUBMERGED FOREST</h3><p class="card-info-desc">Water | Landscape</p></div>
+                </div>
+
                 <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="EYE8cxaTUw4" data-title="Cinematic Journey" data-meta="Short Film">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="EYE8cxaTUw4"><span class="duration-badge"><i class="fa-solid fa-play"></i></span></div>
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="EYE8cxaTUw4" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: CINEMATIC JOURNEY</h3></div>
                 </div>
 
-                <!-- 7. TOKYO -->
-                <div class="masonry-item photography reveal-up project-trigger" data-aspect="1.33" data-type="gallery" data-title="Tokyo Streets" data-meta="Street Photography" 
-                     data-gallery="images/TOKYO/Timeline%201_03_50_03_20.JPG, images/TOKYO/Timeline%201_03_50_26_19.JPG, images/TOKYO/Timeline%201_03_50_40_00.JPG">
-                    <div class="project-card-container parallax-wrapper"><img src="images/TOKYO/Timeline%201_03_50_03_20.JPG" alt="Tokyo" class="project-image parallax-img"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">PHOTO: TOKYO STREETS</h3><p class="card-info-desc">Urban | Night</p></div>
+                <!-- STREET & LIFE: Cafe -->
+                <div class="masonry-item street reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Cafe Vibes" data-meta="Lifestyle" 
+                     data-gallery="images/cafe/ADSC06313.jpg, images/cafe/DSC00976.jpg, images/cafe/DSC06206.jpg, images/cafe/DSC06312.jpg, images/cafe/Timeline%201_01_00_08_20.JPG, images/cafe/Timeline%201_01_02_27_10.jpg, images/cafe/Timeline%201_01_02_45_11.jpg, images/cafe/Timeline%201_01_06_43_12.JPG">
+                    <div class="project-card-container parallax-wrapper"><img src="images/cafe/Timeline%201_01_00_08_20.JPG" alt="Cafe" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">CAFE VIBES</h3><p class="card-info-desc">Interior | Lifestyle</p></div>
                 </div>
 
-                 <!-- 8. Video (Animation) -->
-                 <div class="masonry-item animation cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="NzCtwsILJYg" data-title="Motion Graphics" data-meta="Animation">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Animation" class="project-image parallax-img yt-thumbnail" data-yt-id="NzCtwsILJYg"><span class="duration-badge"><i class="fa-solid fa-play"></i></span></div>
-                    <div class="card-info"><h3 class="card-info-title">ANIMATION WORKS</h3></div>
-                </div>
-                
-                <!-- 9. SUBMERGED FOREST -->
-                <div class="masonry-item photography reveal-up project-trigger" data-aspect="1.77" data-type="gallery" data-title="Submerged Forest" data-meta="Landscape | Yamagata" 
-                     data-gallery="images/submerged_forest/Timeline%201_01_00_26_16.JPG, images/submerged_forest/Timeline%201_01_00_23_17.JPG, images/submerged_forest/Timeline%201_01_00_27_14.JPG">
-                    <div class="project-card-container parallax-wrapper"><img src="images/submerged_forest/Timeline%201_01_00_26_16.JPG" alt="Forest" class="project-image parallax-img"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">PHOTO: SUBMERGED FOREST</h3><p class="card-info-desc">Water | Landscape</p></div>
+                <!-- LANDSCAPE: Paddy Field -->
+                <div class="masonry-item landscape reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Paddy Field" data-meta="Landscape | Yamagata" 
+                     data-gallery="images/Paddy_field/DSC00871.JPG, images/Paddy_field/DSC00876.JPG, images/Paddy_field/DSC00879.JPG">
+                    <div class="project-card-container parallax-wrapper"><img src="images/Paddy_field/DSC00879.JPG" alt="Paddy Field" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">PADDY FIELD</h3><p class="card-info-desc">Landscape | Yamagata</p></div>
                 </div>
 
-                <!-- 追加動画 B -->
+                <!-- CREATIVE: Animal & Aquarium -->
+                <div class="masonry-item creative reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Creatures" data-meta="Animal | Aquarium" 
+                     data-gallery="images/animal/cat.jpg, images/animal/cat2.jpg, images/animal/fox.jpg, images/animal/DSC00992.jpg, images/animal/DSC01064.jpg, images/aquarium/Timeline%201_01_00_12_02.jpg, images/aquarium/Timeline%201_01_00_24_21.jpg, images/aquarium/Timeline%201_01_00_30_10.jpg, images/aquarium/turtle2.jpg">
+                    <div class="project-card-container parallax-wrapper"><img src="images/animal/fox.jpg" alt="Creatures" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">CREATURES</h3><p class="card-info-desc">Animal | Aquarium</p></div>
+                </div>
+
                 <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="RLxHLzlSVyA" data-title="Visual Poetry" data-meta="Cinematic Edit">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="RLxHLzlSVyA"><span class="duration-badge"><i class="fa-solid fa-play"></i></span></div>
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="RLxHLzlSVyA" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: VISUAL POETRY</h3></div>
                 </div>
 
-                <!-- 10. CAFE -->
-                <div class="masonry-item photography reveal-up project-trigger" data-aspect="1.77" data-type="gallery" data-title="Cafe Vibes" data-meta="Lifestyle" 
-                     data-gallery="images/cafe/Timeline%201_01_00_08_20.JPG, images/cafe/Timeline%201_01_06_43_12.JPG">
-                    <div class="project-card-container parallax-wrapper"><img src="images/cafe/Timeline%201_01_00_08_20.JPG" alt="Cafe" class="project-image parallax-img"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">PHOTO: CAFE VIBES</h3><p class="card-info-desc">Interior | Lifestyle</p></div>
+                <!-- LANDSCAPE: Countryside -->
+                <div class="masonry-item landscape reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Rural Landscapes" data-meta="Countryside | Series" 
+                     data-gallery="images/countryside/DSC00943.jpg, images/countryside/DSC02154.jpg, images/countryside/DSC02267.jpg, images/countryside/DSC02851-2.jpg, images/countryside/DSC04221.jpg, images/countryside/DSC04225.jpg, images/countryside/DSCF4732.jpg, images/countryside/DSCF7843.jpg">
+                    <div class="project-card-container parallax-wrapper"><img src="images/countryside/DSCF7843.jpg" alt="Countryside" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">RURAL LANDSCAPES</h3><p class="card-info-desc">Countryside | Landscape</p></div>
                 </div>
 
-                <!-- 11. PADDY FIELD -->
-                <div class="masonry-item photography reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Paddy Field" data-meta="Landscape | Yamagata" 
-                     data-gallery="images/Paddy_field/DSC00871.JPG, images/Paddy_field/DSC00876.JPG, images/Paddy_field/DSC00879.JPG">
-                    <div class="project-card-container parallax-wrapper"><img src="images/Paddy_field/DSC00879.JPG" alt="Paddy Field" class="project-image parallax-img"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">PHOTO: PADDY FIELD</h3><p class="card-info-desc">Landscape | Yamagata</p></div>
-                </div>
-
-                <!-- 追加動画 C -->
                 <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="9evjFyqI2UU" data-title="Creative Documentary" data-meta="Short Film">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="9evjFyqI2UU"><span class="duration-badge"><i class="fa-solid fa-play"></i></span></div>
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="9evjFyqI2UU" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: DOCUMENTARY</h3></div>
                 </div>
 
-                <!-- 12. FRUIT -->
-                <div class="masonry-item photography reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Fruit" data-meta="Still Life" 
-                     data-gallery="images/fruit/IMG_5955.JPG, images/fruit/IMG_5957.JPG, images/fruit/IMG_5958.JPG">
-                    <div class="project-card-container parallax-wrapper"><img src="images/fruit/IMG_5957.JPG" alt="Fruit" class="project-image parallax-img"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">PHOTO: FRUIT</h3><p class="card-info-desc">Still Life</p></div>
+                <!-- STREET & LIFE: Park -->
+                <div class="masonry-item street reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Afternoon Stroll" data-meta="Lifestyle" 
+                     data-gallery="images/park/FortuneSlip.JPG, images/park/Masamune.jpg, images/park/bench10.jpg, images/park/bench2.JPG, images/park/grass.JPG, images/park/grass2.JPG, images/park/handle.jpg, images/park/park10.jpg, images/park/ran.JPG, images/park/tennis.JPG">
+                    <div class="project-card-container parallax-wrapper"><img src="images/park/bench10.jpg" alt="Park" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">AFTERNOON STROLL</h3><p class="card-info-desc">Lifestyle | Outdoor</p></div>
                 </div>
 
-                <!-- 13. PARK -->
-                <div class="masonry-item photography reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Park" data-meta="Lifestyle" 
-                     data-gallery="images/park/FortuneSlip.JPG, images/park/bench.JPG, images/park/bench2.JPG, images/park/bench3.JPG, images/park/grass.JPG, images/park/grass2.JPG, images/park/grass3.JPG, images/park/park1.JPG, images/park/ran.JPG, images/park/tennis.JPG">
-                    <div class="project-card-container parallax-wrapper"><img src="images/park/park1.JPG" alt="Park" class="project-image parallax-img"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">PHOTO: PARK</h3><p class="card-info-desc">Lifestyle | Outdoor</p></div>
-                </div>
-
-                <!-- 追加動画 D -->
                 <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="7fv05-NC9JE" data-title="The Journey" data-meta="Travel Vlog">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="7fv05-NC9JE"><span class="duration-badge"><i class="fa-solid fa-play"></i></span></div>
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="7fv05-NC9JE" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: THE JOURNEY</h3></div>
                 </div>
 
@@ -343,7 +297,6 @@
         </div>
     </footer>
 
-    <!-- モーダル -->
     <div id="project-modal" role="dialog" aria-modal="true" data-lenis-prevent>
         <button class="modal-close-btn" aria-label="Close modal"><i class="fa-solid fa-xmark text-xl"></i></button>
         <div class="modal-content">
@@ -352,7 +305,7 @@
                 <h2 id="modal-title" class="text-3xl md:text-5xl font-serif" style="color: var(--text-main);">Title</h2>
             </div>
             <div id="modal-media-container" class="w-full flex flex-col gap-6"></div>
-            <div class="mt-10 text-center max-w-[600px] mx-auto pb-12">
+            <div class="mt-auto pt-10 text-center max-w-[600px] mx-auto pb-12 w-full">
                 <p class="text-sm leading-relaxed font-light" style="color: var(--text-muted);">All contents captured and edited by Ren Aizawa.</p>
             </div>
         </div>
@@ -361,92 +314,58 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            /* --- 1. 慣性スクロール (Lenis) の設定 --- */
-            const lenis = new Lenis({
-                duration: 1.2,
-                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                smooth: true
-            });
-            function raf(time) {
-                lenis.raf(time);
-                requestAnimationFrame(raf);
-            }
+            const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
+            function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
             requestAnimationFrame(raf);
 
-            /* GSAPとLenisを同期 */
             gsap.registerPlugin(ScrollTrigger);
             lenis.on('scroll', ScrollTrigger.update);
             gsap.ticker.add((time) => { lenis.raf(time * 1000) });
             gsap.ticker.lagSmoothing(0);
 
-            /* --- 2. パララックス効果 (GSAP) --- */
-            // クラス "parallax-img" を持つ画像をスクロールに合わせて少し下に動かす
             gsap.utils.toArray('.parallax-img').forEach(img => {
-                gsap.to(img, {
-                    yPercent: 15, // 15%下にずらす
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: img.closest('.parallax-wrapper'),
-                        start: "top bottom", // 画面下部に入った時
-                        end: "bottom top",   // 画面上部から消える時
-                        scrub: true          // スクロールにピッタリ連動
-                    }
-                });
+                gsap.to(img, { yPercent: 15, ease: "none", scrollTrigger: { trigger: img.closest('.parallax-wrapper'), start: "top bottom", end: "bottom top", scrub: true } });
             });
 
-            /* --- 3. YouTube Thumbnail Auto-fetch --- */
             document.querySelectorAll('.yt-thumbnail').forEach(img => {
                 const id = img.getAttribute('data-yt-id');
                 img.src = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
             });
 
-            /* --- 4. Netflix風 動画ホバー自動再生 --- */
-            if (window.matchMedia("(pointer: fine)").matches) { // PC（マウス操作）のみ有効
+            if (window.matchMedia("(pointer: fine)").matches) {
                 document.querySelectorAll('.project-trigger[data-type="video"]').forEach(trigger => {
                     let previewTimeout;
                     const container = trigger.querySelector('.project-card-container');
                     const videoId = trigger.getAttribute('data-video-id');
 
                     trigger.addEventListener('mouseenter', () => {
-                        // 誤動作防止のため、0.5秒間マウスが乗っていたら再生開始
                         previewTimeout = setTimeout(() => {
-                            // すでにiframeがあれば作らない
                             if(container.querySelector('.hover-video-iframe')) return;
-                            
                             const iframe = document.createElement('iframe');
-                            // autoplay, mute, controls=0 で背景動画として再生
                             iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&modestbranding=1&rel=0&playsinline=1`;
                             iframe.className = 'hover-video-iframe';
                             iframe.setAttribute('frameborder', '0');
                             iframe.setAttribute('allow', 'autoplay');
-                            
                             container.appendChild(iframe);
-                            
-                            // 読み込みのチラつきを抑えるため少し遅れてフェードイン
                             setTimeout(() => { iframe.classList.add('show'); }, 300);
                         }, 500);
                     });
 
                     trigger.addEventListener('mouseleave', () => {
-                        clearTimeout(previewTimeout); // 0.5秒未満で離れたらキャンセル
+                        clearTimeout(previewTimeout);
                         const iframe = container.querySelector('.hover-video-iframe');
                         if (iframe) {
                             iframe.classList.remove('show');
-                            // フェードアウトが終わってからHTMLから削除して軽くする
                             setTimeout(() => { iframe.remove(); }, 600);
                         }
                     });
                 });
             }
 
-            /* --- Preloader --- */
             const preloader = document.getElementById('preloader');
-            window.addEventListener('load', () => {
-                setTimeout(() => { preloader.classList.add('hidden'); setTimeout(() => { preloader.style.display = 'none'; }, 800); }, 400);
-            });
+            window.addEventListener('load', () => { setTimeout(() => { preloader.classList.add('hidden'); setTimeout(() => { preloader.style.display = 'none'; }, 800); }, 400); });
             setTimeout(() => { preloader.classList.add('hidden'); setTimeout(() => { preloader.style.display = 'none'; }, 800); }, 3000);
 
-            /* --- Theme Toggle --- */
             const htmlEl = document.documentElement;
             const themeToggle = document.getElementById('theme-toggle');
             const savedTheme = localStorage.getItem('theme');
@@ -467,29 +386,21 @@
                 });
             }
 
-            /* --- Custom Cursor --- */
             const cursor = document.getElementById('custom-cursor');
             const playAreas = document.querySelectorAll('.cursor-play-area');
             if (window.matchMedia("(pointer: fine)").matches) {
-                // 読み込み直後は少し遅れてフェードイン
                 setTimeout(() => { cursor.style.opacity = '1'; }, 1000);
-
                 let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
                 let cursorX = mouseX, cursorY = mouseY;
                 
                 document.addEventListener('mousemove', (e) => { 
-                    mouseX = e.clientX; 
-                    mouseY = e.clientY; 
+                    mouseX = e.clientX; mouseY = e.clientY; 
                     if(cursor.style.opacity === '0') cursor.style.opacity = '1';
                 });
-                
-                // 画面外に出たらカーソルを隠す
                 document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
 
                 const animateCursor = () => {
-                    cursorX += (mouseX - cursorX) * 0.15; 
-                    cursorY += (mouseY - cursorY) * 0.15;
-                    // 円の大きさが変わっても常に中心をキープする
+                    cursorX += (mouseX - cursorX) * 0.15; cursorY += (mouseY - cursorY) * 0.15;
                     cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
                     requestAnimationFrame(animateCursor);
                 };
@@ -499,17 +410,13 @@
                     area.addEventListener('mouseenter', () => cursor.classList.add('active'));
                     area.addEventListener('mouseleave', () => cursor.classList.remove('active'));
                 });
-            } else {
-                if(cursor) cursor.style.display = 'none';
-            }
+            } else { if(cursor) cursor.style.display = 'none'; }
 
-            /* --- Intersection Observer (Scroll Reveal) --- */
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
             }, { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
             document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
 
-            /* --- Project Modal & Gallery Logic --- */
             const modal = document.getElementById('project-modal');
             const modalCloseBtn = document.querySelector('.modal-close-btn');
             const triggers = document.querySelectorAll('.project-trigger');
@@ -520,7 +427,6 @@
             const openModal = (e) => {
                 const trigger = e.currentTarget;
                 const type = trigger.getAttribute('data-type');
-                
                 modalTitle.textContent = trigger.getAttribute('data-title');
                 modalMeta.textContent = trigger.getAttribute('data-meta');
                 mediaContainer.innerHTML = ''; 
@@ -543,22 +449,22 @@
                             const img = document.createElement('img');
                             img.src = url;
                             img.className = 'w-full h-auto object-contain rounded bg-[var(--card-placeholder)] shadow-lg';
-                            img.loading = 'lazy';
+                            img.loading = 'lazy'; // モーダル内の画像も遅延読み込みで爆速化
                             mediaContainer.appendChild(img);
                         });
                     }
                 }
 
                 modal.classList.add('open');
-                lenis.stop(); // モーダルを開いたら背面スクロールを止める
+                lenis.stop(); 
                 if(cursor) cursor.style.display = 'none';
                 modal.scrollTop = 0;
             };
 
             const closeModal = () => {
                 modal.classList.remove('open');
-                lenis.start(); // 背面スクロール再開
-                if(cursor) cursor.style.display = 'flex';
+                lenis.start(); 
+                if(cursor) cursor.style.display = 'block';
                 setTimeout(() => { mediaContainer.innerHTML = ''; }, 400);
             };
 
@@ -567,7 +473,6 @@
             modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
             document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
 
-            /* --- 5. フィルターによるシャッフルアニメーション (Masonry) --- */
             const grid = document.getElementById('portfolio-grid');
             let items = Array.from(grid.querySelectorAll('.masonry-item'));
             const filterTabs = document.querySelectorAll('.filter-tab');
@@ -588,7 +493,6 @@
                     const left = minIndex * (itemWidth + gap);
                     const top = minHeight;
                     
-                    // シャッフル移動のアニメーション
                     item.style.transform = `translate(${left}px, ${top}px) scale(1)`;
                     
                     const aspect = parseFloat(item.getAttribute('data-aspect')) || 1;
@@ -597,29 +501,23 @@
                     colHeights[minIndex] += itemHeight + infoHeight + gap + 16;
                 });
                 
-                // グリッド全体の高さを更新 (アニメーション付き)
                 grid.style.height = `${Math.max(...colHeights, 200)}px`;
-                ScrollTrigger.refresh(); // GSAPに高さ変更を通知
+                ScrollTrigger.refresh(); 
             };
 
             filterTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    // タブのアクティブ状態切り替え
                     filterTabs.forEach(t => t.classList.remove('active')); 
                     tab.classList.add('active');
-                    
                     const filterValue = tab.getAttribute('data-filter');
                     
                     items.forEach(item => {
-                        // 該当するアイテムを表示、それ以外は .hidden クラスで消す
                         if (filterValue === 'all' || item.classList.contains(filterValue)) { 
                             item.classList.remove('hidden'); 
                         } else { 
                             item.classList.add('hidden'); 
                         }
                     });
-                    
-                    // 少し遅らせて座標計算 (シャッフルのトリガー)
                     setTimeout(layoutGrid, 50); 
                 });
             });
