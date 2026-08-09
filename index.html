@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -37,6 +37,7 @@
 
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); transition: background-color 0.4s ease, color 0.4s ease; -webkit-font-smoothing: antialiased; overflow-x: hidden; cursor: auto; }
         .font-serif { font-family: 'Playfair Display', serif; }
+        .font-jp-serif { font-family: 'Noto Serif JP', serif; }
         .theme-border { transition: border-color 0.4s ease; border-color: var(--border-color); }
         .theme-bg { background-color: var(--bg-color); transition: background-color 0.4s ease; }
 
@@ -57,8 +58,6 @@
 
         .gallery-badge { position: absolute; top: 12px; right: 12px; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px); color: white; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; z-index: 5; transition: opacity 0.3s ease; }
         .project-card-container:hover .gallery-badge { opacity: 0; }
-        .duration-badge { position: absolute; bottom: 12px; right: 12px; background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(4px); color: white; padding: 4px 10px; font-size: 0.75rem; font-weight: 500; border-radius: 4px; z-index: 5; transition: opacity 0.3s ease; }
-        .project-card-container:hover .duration-badge { opacity: 0; }
 
         .card-info { margin-top: 1rem; }
         .card-info-title { font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
@@ -82,7 +81,6 @@
         .hover-video-iframe.show { opacity: 1; }
         @media (pointer: fine) { .cursor-play-area .project-card-container { cursor: none; } }
         
-        /* 案B: 濁りのない「サークル・エクスパンド」カーソル */
         #custom-cursor { position: fixed; top: 0; left: 0; width: 8px; height: 8px; background-color: white; border: 1px solid transparent; border-radius: 50%; pointer-events: none; z-index: 9999; opacity: 0; transition: width 0.4s cubic-bezier(0.21, 1, 0.32, 1), height 0.4s cubic-bezier(0.21, 1, 0.32, 1), background-color 0.4s ease, border-color 0.4s ease, opacity 0.3s ease; mix-blend-mode: difference; }
         #custom-cursor.active { width: 80px; height: 80px; background-color: transparent; border-color: white; border-width: 1.5px; }
 
@@ -115,6 +113,7 @@
             </div>
             <div class="flex items-center gap-6 lg:gap-8 text-[0.8rem] uppercase tracking-[0.15em] font-medium">
                 <a href="#" class="hidden md:inline-block nav-link active">HOME</a>
+                <a href="#about" class="hidden md:inline-block nav-link">ABOUT</a>
                 <a href="#work" class="hidden md:inline-block nav-link">WORK</a>
                 <button id="theme-toggle" class="text-xl focus:outline-none transition-transform hover:scale-110 ml-2" style="color: var(--text-muted);" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
             </div>
@@ -123,6 +122,7 @@
 
     <main class="max-w-[1400px] mx-auto px-6 md:px-12 py-12 md:py-20">
 
+        <!-- オープニングセクション -->
         <section class="mb-24 md:mb-32 load-fade-in delay-1">
             <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-6 md:gap-10">
                 <div class="w-full flex flex-col group cursor-play-area project-trigger cinematography" data-type="video" data-video-id="Lcjw5NQooYM" data-title="経験と価値" data-meta="Cinematic Short Film">
@@ -131,7 +131,7 @@
                     </div>
                     <div class="card-info"><h3 class="card-info-title text-xl font-serif">経験と価値</h3><p class="card-info-desc">Cinematic Short Film</p></div>
                 </div>
-                <div class="hidden md:flex flex-col group project-trigger landscape" data-type="gallery" data-title="Nature & Landscapes" data-meta="Yamagata | Series" data-gallery="images/nature/autumn_leaves.JPG, images/nature/Domon.JPG">
+                <div class="hidden md:flex flex-col group project-trigger landscape" data-type="gallery" data-title="Breath of Nature" data-meta="Yamagata | Series" data-gallery="images/nature/autumn_leaves.JPG, images/nature/Domon.JPG">
                     <div class="project-card-container parallax-wrapper aspect-[4/3] h-full mb-5">
                         <img src="images/nature/autumn_leaves.JPG" alt="Nature" class="project-image parallax-img" loading="lazy" decoding="async">
                         <div class="gallery-badge"><i class="fa-regular fa-images"></i></div>
@@ -140,7 +140,39 @@
             </div>
         </section>
 
-        <section id="work" class="pt-16 border-t theme-border reveal-up">
+        <!-- 新設：ABOUT セクション -->
+        <section id="about" class="py-24 md:py-32 border-t theme-border reveal-up">
+            <div class="max-w-[1000px] mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
+                
+                <!-- プロフィール写真 (パララックス効果付き) -->
+                <div class="w-full md:w-2/5 parallax-wrapper rounded-lg overflow-hidden aspect-[3/4] md:sticky md:top-32 shadow-sm">
+                    <img src="images/profile/DSCF1960.jpg" alt="Ren Aizawa" class="parallax-img w-full h-full object-cover" loading="lazy" decoding="async">
+                </div>
+                
+                <!-- テキストエリア -->
+                <div class="w-full md:w-3/5 md:pt-8 text-center md:text-left">
+                    <p class="text-xs uppercase tracking-[0.3em] mb-8" style="color: var(--text-muted);">Biography</p>
+                    
+                    <div class="font-jp-serif text-[0.95rem] md:text-[1.05rem] leading-[2.2] md:leading-[2.4] tracking-[0.08em] space-y-8" style="color: var(--text-main);">
+                        <p>福島県いわき市に生まれ、山形県鶴岡市の豊かな自然の中で育つ。</p>
+                        
+                        <p>レンズを通した世界への探求は、愛犬との何気ない日常を永遠に残したいという、ごく個人的で温かな衝動から始まった。<br>
+                        数々のカメラやオールドレンズを渡り歩き、独学で光の捉え方を深めるうちに、そのまなざしは静止画の枠を越え、映像表現へと拡張していく。</p>
+                        
+                        <p>知人のミュージックビデオ制作において撮影アシスタントや照明スタッフとして現場の空気を吸収。そこでの実践的なライティング技術とシネマティックな視点が、現在のスタイルの礎となる。<br>
+                        現在では会社員としての顔を持ちながら、企業向けの講演記録、採用・社内研修用フィルムのディレクションや撮影まで幅広く手掛けている。</p>
+                    </div>
+
+                    <div class="mt-12 md:mt-16 pt-12 md:pt-16 border-t theme-border font-jp-serif text-[1.1rem] md:text-[1.2rem] leading-[2.0] tracking-[0.1em] font-medium" style="color: var(--text-main);">
+                        <p>愛犬を見つめるパーソナルな視点と、プロの現場で培われた確かな技術。<br>
+                        その交差する場所で、飾らない日常の美しさと、そこに潜む物語を紡ぎ出している。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ワークセクション -->
+        <section id="work" class="pt-24 border-t theme-border reveal-up">
             <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-12 gap-8">
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif tracking-wide">SELECTED WORKS</h2>
                 <div class="flex flex-wrap gap-4 md:gap-6" id="filters">
@@ -167,7 +199,7 @@
                     <div class="card-info"><h3 class="card-info-title">PORTRAIT: LIGHT & SHADOW</h3><p class="card-info-desc">People | Studio & Outdoor</p></div>
                 </div>
                 
-                <!-- 新追加：アニメーション動画 -->
+                <!-- アニメーション動画 -->
                 <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="NzCtwsILJYg" data-title="Animation" data-meta="Animation Works">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Animation" class="project-image parallax-img yt-thumbnail" data-yt-id="NzCtwsILJYg" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: ANIMATION</h3><p class="card-info-desc">Animation Works</p></div>
@@ -180,9 +212,9 @@
                     <div class="card-info"><h3 class="card-info-title">NATURE: BREATH OF NATURE</h3><p class="card-info-desc">Yamagata | Landscape</p></div>
                 </div>
 
-                <!-- STREET & LIFE: Dog -->
+                <!-- STREET & LIFE: Dog (重複画像DSCF1960.jpgを削除) -->
                 <div class="masonry-item street reveal-up project-trigger" data-aspect="0.67" data-type="gallery" data-title="Life with Dog" data-meta="Lifestyle | Portrait" 
-                     data-gallery="images/dog/Bee11.jpg, images/dog/Bee12.jpg, images/dog/DSC00341.jpg, images/dog/DSC00760.jpg, images/dog/DSC05783.jpg, images/dog/DSC05789.jpg, images/dog/DSC06661.jpg, images/dog/DSCF1898.jpg, images/dog/DSCF1910.JPG, images/dog/DSCF1960.jpg, images/dog/DSCF2126.jpg, images/dog/DSCF2237.JPG, images/dog/IMG_1993.JPG, images/dog/IMG_2857.JPG, images/dog/Timeline%201_01_07_56_02.jpg, images/dog/Timeline%201_03_03_42_08.jpg, images/dog/home.JPG">
+                     data-gallery="images/dog/Bee11.jpg, images/dog/Bee12.jpg, images/dog/DSC00341.jpg, images/dog/DSC00760.jpg, images/dog/DSC05783.jpg, images/dog/DSC05789.jpg, images/dog/DSC06661.jpg, images/dog/DSCF1898.jpg, images/dog/DSCF1910.JPG, images/dog/DSCF2126.jpg, images/dog/DSCF2237.JPG, images/dog/IMG_1993.JPG, images/dog/IMG_2857.JPG, images/dog/Timeline%201_01_07_56_02.jpg, images/dog/Timeline%201_03_03_42_08.jpg, images/dog/home.JPG">
                     <div class="project-card-container parallax-wrapper"><img src="images/dog/DSCF1910.JPG" alt="Dog" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
                     <div class="card-info"><h3 class="card-info-title">LIFE WITH DOG</h3><p class="card-info-desc">Portrait | Lifestyle</p></div>
                 </div>
@@ -192,7 +224,7 @@
                     <div class="card-info"><h3 class="card-info-title">VIDEO: WINTER CHRONICLES</h3></div>
                 </div>
                 
-                <!-- 新追加：愛犬ワンクリップムービー (複数動画ギャラリー) -->
+                <!-- 愛犬ワンクリップムービー (複数動画ギャラリー) -->
                 <div class="masonry-item street cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="9X-seUrbxH0" data-videos="9X-seUrbxH0, k8B3f46S-pE, AwSumzE5RQ8, BUXuLJn3QTw" data-title="Dog Daily Clips" data-meta="Short Clips">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Dog Clips" class="project-image parallax-img yt-thumbnail" data-yt-id="9X-seUrbxH0" loading="lazy" decoding="async">
                     <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
@@ -214,7 +246,7 @@
                     <div class="card-info"><h3 class="card-info-title">FRAGMENTS</h3><p class="card-info-desc">Still Life | Moments</p></div>
                 </div>
                 
-                <!-- 新追加：哲学的なムービー (複数動画ギャラリー) -->
+                <!-- 哲学的なムービー (複数動画ギャラリー) -->
                 <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="16-gMdQazcM" data-videos="16-gMdQazcM, wvsTxFXqNBw" data-title="Philosophical Thoughts" data-meta="Cinematic Thoughts">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Philosophy" class="project-image parallax-img yt-thumbnail" data-yt-id="16-gMdQazcM" loading="lazy" decoding="async">
                     <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
@@ -234,7 +266,7 @@
                     <div class="card-info"><h3 class="card-info-title">VIDEO: CITY LIGHTS</h3></div>
                 </div>
                 
-                <!-- 新追加：アニマル動画 -->
+                <!-- アニマル動画 -->
                 <div class="masonry-item creative cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="eQr2MRXno94" data-title="Animal Encounters" data-meta="Cinematic Vlog">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Animal" class="project-image parallax-img yt-thumbnail" data-yt-id="eQr2MRXno94" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: ANIMAL ENCOUNTERS</h3><p class="card-info-desc">Cinematic Vlog</p></div>
@@ -247,7 +279,7 @@
                     <div class="card-info"><h3 class="card-info-title">EXHIBITION SPACE</h3><p class="card-info-desc">Event | Space</p></div>
                 </div>
                 
-                <!-- 新追加：愛犬ショートムービー (複数動画ギャラリー) -->
+                <!-- 愛犬ショートムービー (複数動画ギャラリー) -->
                 <div class="masonry-item street cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="q1uEt-0V8aY" data-videos="q1uEt-0V8aY, 0o7tfnSqMz0, 0JU3xiAAZSg" data-title="Life with Dog - Films" data-meta="Short Films">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Dog Films" class="project-image parallax-img yt-thumbnail" data-yt-id="q1uEt-0V8aY" loading="lazy" decoding="async">
                     <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
@@ -307,7 +339,7 @@
 
                 <!-- STREET & LIFE: Park -->
                 <div class="masonry-item street reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Afternoon Stroll" data-meta="Lifestyle" 
-                     data-gallery="images/park/Masamune.jpg, images/park/bench10.jpg, images/park/bench2.JPG, images/park/grass.JPG, images/park/grass2.JPG, images/park/handle.jpg, images/park/park10.jpg, images/park/ran.JPG, images/park/tennis.JPG">
+                     data-gallery="images/park/park10.jpg, images/park/Masamune.jpg, images/park/bench10.jpg, images/park/bench2.JPG, images/park/grass.JPG, images/park/grass2.JPG, images/park/handle.jpg, images/park/ran.JPG, images/park/tennis.JPG">
                     <div class="project-card-container parallax-wrapper"><img src="images/park/park10.jpg" alt="Park" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
                     <div class="card-info"><h3 class="card-info-title">AFTERNOON STROLL</h3><p class="card-info-desc">Lifestyle | Outdoor</p></div>
                 </div>
@@ -363,18 +395,17 @@
                 gsap.to(img, { yPercent: 15, ease: "none", scrollTrigger: { trigger: img.closest('.parallax-wrapper'), start: "top bottom", end: "bottom top", scrub: true } });
             });
 
-            // YouTubeサムネイル設定とフォールバック（エラー時の中画質読み込み）
+            // YouTubeサムネイルの読み込み (エラー時は中画質へフォールバック)
             document.querySelectorAll('.yt-thumbnail').forEach(img => {
                 const id = img.getAttribute('data-yt-id');
                 img.src = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
                 img.onerror = function() {
-                    this.onerror = null; // 無限ループ防止
+                    this.onerror = null;
                     this.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
                 };
             });
 
             if (window.matchMedia("(pointer: fine)").matches) {
-                // 自動再生プレビューの対象を「video」と「video-gallery」の両方に拡張
                 document.querySelectorAll('.project-trigger[data-type="video"], .project-trigger[data-type="video-gallery"]').forEach(trigger => {
                     let previewTimeout;
                     const container = trigger.querySelector('.project-card-container');
@@ -485,15 +516,13 @@
                     mediaContainer.appendChild(wrapper);
                     
                 } else if (type === 'video-gallery') {
-                    // 複数動画ギャラリー展開ロジック
                     const rawVideos = trigger.getAttribute('data-videos');
                     if (rawVideos) {
                         const videoIds = rawVideos.split(',').map(id => id.trim()).filter(id => id !== '');
                         videoIds.forEach(videoId => {
                             const wrapper = document.createElement('div');
-                            wrapper.className = 'video-wrapper mb-6'; // 動画同士の隙間
+                            wrapper.className = 'video-wrapper mb-6'; 
                             const iframe = document.createElement('iframe');
-                            // 複数ある場合は自動再生すると音が重なるためautoplayは外しています
                             iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
                             iframe.setAttribute('frameborder', '0');
                             iframe.setAttribute('allow', 'fullscreen; picture-in-picture');
@@ -508,7 +537,8 @@
                         const imageUrls = rawGallery.split(',').map(url => url.trim()).filter(url => url !== '');
                         imageUrls.forEach(url => {
                             const img = document.createElement('img');
-                            img.src = url;
+                            // 半角スペースなどのエンコード処理を自動化
+                            img.src = url.replace(/ /g, '%20');
                             img.className = 'w-full h-auto object-contain rounded bg-[var(--card-placeholder)] shadow-lg';
                             img.loading = 'lazy'; 
                             mediaContainer.appendChild(img);
