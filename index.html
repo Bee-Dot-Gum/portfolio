@@ -125,7 +125,7 @@
         <!-- オープニングセクション -->
         <section class="mb-24 md:mb-32 load-fade-in delay-1">
             <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-6 md:gap-10">
-                <div class="w-full flex flex-col group cursor-play-area project-trigger cinematography" data-type="video" data-video-id="Lcjw5NQooYM" data-title="経験と価値" data-meta="Cinematic Short Film">
+                <div class="w-full flex flex-col group cursor-play-area project-trigger cinematography video-only" data-type="video" data-video-id="Lcjw5NQooYM" data-title="経験と価値" data-meta="Cinematic Short Film">
                     <div class="project-card-container parallax-wrapper aspect-video md:aspect-[16/10] mb-5">
                         <img src="" alt="経験と価値" class="project-image parallax-img yt-thumbnail" data-yt-id="Lcjw5NQooYM" loading="lazy" decoding="async">
                     </div>
@@ -140,16 +140,14 @@
             </div>
         </section>
 
-        <!-- 新設：ABOUT セクション -->
+        <!-- ABOUT セクション -->
         <section id="about" class="py-24 md:py-32 border-t theme-border reveal-up">
             <div class="max-w-[1000px] mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
                 
-                <!-- プロフィール写真 (パララックス効果付き) -->
                 <div class="w-full md:w-2/5 parallax-wrapper rounded-lg overflow-hidden aspect-[3/4] md:sticky md:top-32 shadow-sm">
                     <img src="images/profile/DSCF1960.jpg" alt="Ren Aizawa" class="parallax-img w-full h-full object-cover" loading="lazy" decoding="async">
                 </div>
                 
-                <!-- テキストエリア -->
                 <div class="w-full md:w-3/5 md:pt-8 text-center md:text-left">
                     <p class="text-xs uppercase tracking-[0.3em] mb-8" style="color: var(--text-muted);">Biography</p>
                     
@@ -177,6 +175,8 @@
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif tracking-wide">SELECTED WORKS</h2>
                 <div class="flex flex-wrap gap-4 md:gap-6" id="filters">
                     <button class="filter-tab active" data-filter="all">ALL</button>
+                    <!-- 動画のみのフィルターを新設 -->
+                    <button class="filter-tab" data-filter="video-only">VIDEO</button>
                     <button class="filter-tab" data-filter="cinematography">CINEMATOGRAPHY</button>
                     <button class="filter-tab" data-filter="portrait">PORTRAIT</button>
                     <button class="filter-tab" data-filter="landscape">LANDSCAPE</button>
@@ -187,7 +187,7 @@
 
             <div class="masonry-grid" id="portfolio-grid">
                 
-                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="ODE8aW-eSyM" data-title="Autumn in Japan" data-meta="Cinematic Vlog">
+                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="ODE8aW-eSyM" data-title="Autumn in Japan" data-meta="Cinematic Vlog">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Autumn" class="project-image parallax-img yt-thumbnail" data-yt-id="ODE8aW-eSyM" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: AUTUMN IN JAPAN</h3><p class="card-info-desc">Cinematic Vlog | 4K</p></div>
                 </div>
@@ -200,7 +200,7 @@
                 </div>
                 
                 <!-- アニメーション動画 -->
-                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="NzCtwsILJYg" data-title="Animation" data-meta="Animation Works">
+                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="NzCtwsILJYg" data-title="Animation" data-meta="Animation Works">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Animation" class="project-image parallax-img yt-thumbnail" data-yt-id="NzCtwsILJYg" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: ANIMATION</h3><p class="card-info-desc">Animation Works</p></div>
                 </div>
@@ -212,20 +212,23 @@
                     <div class="card-info"><h3 class="card-info-title">NATURE: BREATH OF NATURE</h3><p class="card-info-desc">Yamagata | Landscape</p></div>
                 </div>
 
-                <!-- STREET & LIFE: Dog (重複画像DSCF1960.jpgを削除) -->
+                <!-- STREET & LIFE: Dog -->
                 <div class="masonry-item street reveal-up project-trigger" data-aspect="0.67" data-type="gallery" data-title="Life with Dog" data-meta="Lifestyle | Portrait" 
                      data-gallery="images/dog/Bee11.jpg, images/dog/Bee12.jpg, images/dog/DSC00341.jpg, images/dog/DSC00760.jpg, images/dog/DSC05783.jpg, images/dog/DSC05789.jpg, images/dog/DSC06661.jpg, images/dog/DSCF1898.jpg, images/dog/DSCF1910.JPG, images/dog/DSCF2126.jpg, images/dog/DSCF2237.JPG, images/dog/IMG_1993.JPG, images/dog/IMG_2857.JPG, images/dog/Timeline%201_01_07_56_02.jpg, images/dog/Timeline%201_03_03_42_08.jpg, images/dog/home.JPG">
                     <div class="project-card-container parallax-wrapper"><img src="images/dog/DSCF1910.JPG" alt="Dog" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
                     <div class="card-info"><h3 class="card-info-title">LIFE WITH DOG</h3><p class="card-info-desc">Portrait | Lifestyle</p></div>
                 </div>
 
-                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="5ILh0I_STOU" data-title="Winter Chronicles" data-meta="Short Film">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Winter" class="project-image parallax-img yt-thumbnail" data-yt-id="5ILh0I_STOU" loading="lazy" decoding="async"></div>
-                    <div class="card-info"><h3 class="card-info-title">VIDEO: WINTER CHRONICLES</h3></div>
+                <!-- 会社日常動画まとめ -->
+                <div class="masonry-item street video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="5ILh0I_STOU" data-videos="5ILh0I_STOU, EYE8cxaTUw4, qjfgR4MHwkI, 9evjFyqI2UU, RLxHLzlSVyA" data-title="Company Daily Life" data-meta="Corporate Vlog">
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Company Daily Life" class="project-image parallax-img yt-thumbnail" data-yt-id="5ILh0I_STOU" loading="lazy" decoding="async">
+                    <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
+                    </div>
+                    <div class="card-info"><h3 class="card-info-title">VIDEO: COMPANY DAILY</h3><p class="card-info-desc">Corporate Vlog</p></div>
                 </div>
                 
                 <!-- 愛犬ワンクリップムービー (複数動画ギャラリー) -->
-                <div class="masonry-item street cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="9X-seUrbxH0" data-videos="9X-seUrbxH0, k8B3f46S-pE, AwSumzE5RQ8, BUXuLJn3QTw" data-title="Dog Daily Clips" data-meta="Short Clips">
+                <div class="masonry-item street video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="9X-seUrbxH0" data-videos="9X-seUrbxH0, k8B3f46S-pE, AwSumzE5RQ8, BUXuLJn3QTw" data-title="Dog Daily Clips" data-meta="Short Clips">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Dog Clips" class="project-image parallax-img yt-thumbnail" data-yt-id="9X-seUrbxH0" loading="lazy" decoding="async">
                     <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
                     </div>
@@ -239,6 +242,14 @@
                     <div class="card-info"><h3 class="card-info-title">URBAN: TOKYO STREETS</h3><p class="card-info-desc">Urban Geometry | Night</p></div>
                 </div>
 
+                <!-- Pass the mic予告まとめ -->
+                <div class="masonry-item creative video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="J0SrfyJnlro" data-videos="J0SrfyJnlro, csBwOPPWZ3I, kyaFJLmSHzk" data-title="Pass the mic Teasers" data-meta="Event Teaser">
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Pass the mic" class="project-image parallax-img yt-thumbnail" data-yt-id="J0SrfyJnlro" loading="lazy" decoding="async">
+                    <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
+                    </div>
+                    <div class="card-info"><h3 class="card-info-title">VIDEO: PASS THE MIC</h3><p class="card-info-desc">Event Teasers</p></div>
+                </div>
+
                 <!-- CREATIVE: Fragments -->
                 <div class="masonry-item creative reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Fragments" data-meta="Still Life & Moments" 
                      data-gallery="images/fragments/DSC02610.jpg, images/fragments/DSC04839.jpg, images/fragments/Glass.jpg, images/fragments/Gozira.jpg, images/fragments/Scissors.jpg, images/fragments/Takadate.jpg, images/fragments/cap.jpg">
@@ -246,8 +257,8 @@
                     <div class="card-info"><h3 class="card-info-title">FRAGMENTS</h3><p class="card-info-desc">Still Life | Moments</p></div>
                 </div>
                 
-                <!-- 哲学的なムービー (複数動画ギャラリー) -->
-                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="16-gMdQazcM" data-videos="16-gMdQazcM, wvsTxFXqNBw" data-title="Philosophical Thoughts" data-meta="Cinematic Thoughts">
+                <!-- 哲学的なムービー -->
+                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="16-gMdQazcM" data-videos="16-gMdQazcM, wvsTxFXqNBw" data-title="Philosophical Thoughts" data-meta="Cinematic Thoughts">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Philosophy" class="project-image parallax-img yt-thumbnail" data-yt-id="16-gMdQazcM" loading="lazy" decoding="async">
                     <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
                     </div>
@@ -260,16 +271,19 @@
                     <div class="project-card-container parallax-wrapper"><img src="images/shrine/FortuneSlip.JPG" alt="Shrine" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
                     <div class="card-info"><h3 class="card-info-title">SACRED SILENCE</h3><p class="card-info-desc">Shrines & Temples</p></div>
                 </div>
-
-                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="qjfgR4MHwkI" data-title="City Lights" data-meta="Cinematic Vlog">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="City" class="project-image parallax-img yt-thumbnail" data-yt-id="qjfgR4MHwkI" loading="lazy" decoding="async"></div>
-                    <div class="card-info"><h3 class="card-info-title">VIDEO: CITY LIGHTS</h3></div>
-                </div>
                 
                 <!-- アニマル動画 -->
-                <div class="masonry-item creative cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="eQr2MRXno94" data-title="Animal Encounters" data-meta="Cinematic Vlog">
+                <div class="masonry-item creative video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="eQr2MRXno94" data-title="Animal Encounters" data-meta="Cinematic Vlog">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Animal" class="project-image parallax-img yt-thumbnail" data-yt-id="eQr2MRXno94" loading="lazy" decoding="async"></div>
                     <div class="card-info"><h3 class="card-info-title">VIDEO: ANIMAL ENCOUNTERS</h3><p class="card-info-desc">Cinematic Vlog</p></div>
+                </div>
+
+                <!-- 会社紹介動画まとめ -->
+                <div class="masonry-item creative video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="7fv05-NC9JE" data-videos="7fv05-NC9JE, jUDVrfHdrnc" data-title="Company Introductions" data-meta="Corporate Video">
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Company Introductions" class="project-image parallax-img yt-thumbnail" data-yt-id="7fv05-NC9JE" loading="lazy" decoding="async">
+                    <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
+                    </div>
+                    <div class="card-info"><h3 class="card-info-title">VIDEO: COMPANY INTRO</h3><p class="card-info-desc">Corporate Video</p></div>
                 </div>
 
                 <!-- CREATIVE: Expo -->
@@ -280,7 +294,7 @@
                 </div>
                 
                 <!-- 愛犬ショートムービー (複数動画ギャラリー) -->
-                <div class="masonry-item street cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="q1uEt-0V8aY" data-videos="q1uEt-0V8aY, 0o7tfnSqMz0, 0JU3xiAAZSg" data-title="Life with Dog - Films" data-meta="Short Films">
+                <div class="masonry-item street video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="q1uEt-0V8aY" data-videos="q1uEt-0V8aY, 0o7tfnSqMz0, 0JU3xiAAZSg" data-title="Life with Dog - Films" data-meta="Short Films">
                     <div class="project-card-container parallax-wrapper"><img src="" alt="Dog Films" class="project-image parallax-img yt-thumbnail" data-yt-id="q1uEt-0V8aY" loading="lazy" decoding="async">
                     <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
                     </div>
@@ -292,11 +306,6 @@
                      data-gallery="images/submerged_forest/Timeline%201_01_00_23_17.JPG, images/submerged_forest/Timeline%201_01_00_26_16.JPG, images/submerged_forest/Timeline%201_01_00_27_14.JPG">
                     <div class="project-card-container parallax-wrapper"><img src="images/submerged_forest/Timeline%201_01_00_26_16.JPG" alt="Forest" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
                     <div class="card-info"><h3 class="card-info-title">SUBMERGED FOREST</h3><p class="card-info-desc">Water | Landscape</p></div>
-                </div>
-
-                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="EYE8cxaTUw4" data-title="Cinematic Journey" data-meta="Short Film">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="EYE8cxaTUw4" loading="lazy" decoding="async"></div>
-                    <div class="card-info"><h3 class="card-info-title">VIDEO: CINEMATIC JOURNEY</h3></div>
                 </div>
 
                 <!-- STREET & LIFE: Cafe -->
@@ -320,11 +329,6 @@
                     <div class="card-info"><h3 class="card-info-title">CREATURES</h3><p class="card-info-desc">Animal | Aquarium</p></div>
                 </div>
 
-                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="RLxHLzlSVyA" data-title="Visual Poetry" data-meta="Cinematic Edit">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="RLxHLzlSVyA" loading="lazy" decoding="async"></div>
-                    <div class="card-info"><h3 class="card-info-title">VIDEO: VISUAL POETRY</h3></div>
-                </div>
-
                 <!-- LANDSCAPE: Countryside -->
                 <div class="masonry-item landscape reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Rural Landscapes" data-meta="Countryside | Series" 
                      data-gallery="images/countryside/DSC00943.jpg, images/countryside/DSC02154.jpg, images/countryside/DSC02267.jpg, images/countryside/DSC02851-2.jpg, images/countryside/DSC04221.jpg, images/countryside/DSC04225.jpg, images/countryside/DSCF4732.jpg, images/countryside/DSCF7843.jpg">
@@ -332,21 +336,11 @@
                     <div class="card-info"><h3 class="card-info-title">RURAL LANDSCAPES</h3><p class="card-info-desc">Countryside | Landscape</p></div>
                 </div>
 
-                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="9evjFyqI2UU" data-title="Creative Documentary" data-meta="Short Film">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="9evjFyqI2UU" loading="lazy" decoding="async"></div>
-                    <div class="card-info"><h3 class="card-info-title">VIDEO: DOCUMENTARY</h3></div>
-                </div>
-
                 <!-- STREET & LIFE: Park -->
                 <div class="masonry-item street reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Afternoon Stroll" data-meta="Lifestyle" 
                      data-gallery="images/park/park10.jpg, images/park/Masamune.jpg, images/park/bench10.jpg, images/park/bench2.JPG, images/park/grass.JPG, images/park/grass2.JPG, images/park/handle.jpg, images/park/ran.JPG, images/park/tennis.JPG">
                     <div class="project-card-container parallax-wrapper"><img src="images/park/park10.jpg" alt="Park" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
                     <div class="card-info"><h3 class="card-info-title">AFTERNOON STROLL</h3><p class="card-info-desc">Lifestyle | Outdoor</p></div>
-                </div>
-
-                <div class="masonry-item cinematography cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="7fv05-NC9JE" data-title="The Journey" data-meta="Travel Vlog">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Video" class="project-image parallax-img yt-thumbnail" data-yt-id="7fv05-NC9JE" loading="lazy" decoding="async"></div>
-                    <div class="card-info"><h3 class="card-info-title">VIDEO: THE JOURNEY</h3></div>
                 </div>
 
             </div>
