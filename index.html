@@ -124,21 +124,11 @@
 
     <main class="max-w-[1400px] mx-auto px-6 md:px-12 py-12 md:py-20">
 
-        <!-- オープニングセクション -->
+        <!-- オープニングセクション (ヒーロービデオ) -->
         <section class="mb-24 md:mb-32 load-fade-in delay-1">
-            <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-6 md:gap-10">
-                <div class="w-full flex flex-col group cursor-play-area project-trigger cinematography video-only" data-type="video" data-video-id="Lcjw5NQooYM" data-title="経験と価値" data-meta="Cinematic Short Film">
-                    <div class="project-card-container parallax-wrapper aspect-video md:aspect-[16/10] mb-5">
-                        <img src="" alt="経験と価値" class="project-image parallax-img yt-thumbnail" data-yt-id="Lcjw5NQooYM" loading="lazy" decoding="async">
-                    </div>
-                    <div class="card-info"><h3 class="card-info-title text-xl font-serif">経験と価値</h3><p class="card-info-desc">Cinematic Short Film</p></div>
-                </div>
-                <div class="hidden md:flex flex-col group project-trigger landscape" data-type="gallery" data-title="Breath of Nature" data-meta="Yamagata | Series" data-gallery="images/nature/autumn_leaves.JPG, images/nature/Domon.JPG">
-                    <div class="project-card-container parallax-wrapper aspect-[4/3] h-full mb-5">
-                        <img src="images/nature/autumn_leaves.JPG" alt="Nature" class="project-image parallax-img" loading="lazy" decoding="async">
-                        <div class="gallery-badge"><i class="fa-regular fa-images"></i></div>
-                    </div>
-                </div>
+            <div class="w-full relative aspect-video md:aspect-[21/9] overflow-hidden rounded-lg parallax-wrapper shadow-sm cursor-play-area">
+                <!-- autoplay, loop, muted, playsinline をつけることでスマホでも自動再生されます -->
+                <video src="videos/opening_2.mp4" autoplay loop muted playsinline class="w-full h-full object-cover parallax-img"></video>
             </div>
         </section>
 
@@ -189,9 +179,12 @@
 
             <div class="masonry-grid" id="portfolio-grid">
                 
-                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="ODE8aW-eSyM" data-title="Autumn in Japan" data-meta="Cinematic Vlog">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Autumn" class="project-image parallax-img yt-thumbnail" data-yt-id="ODE8aW-eSyM" loading="lazy" decoding="async"></div>
-                    <div class="card-info"><h3 class="card-info-title">VIDEO: AUTUMN IN JAPAN</h3><p class="card-info-desc">Cinematic Vlog | 4K</p></div>
+                <!-- 統合：Lcjw5NQooYM と ODE8aW-eSyM -->
+                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="Lcjw5NQooYM" data-videos="Lcjw5NQooYM, ODE8aW-eSyM" data-title="Cinematic Short Films" data-meta="Short Films">
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Cinematic Shorts" class="project-image parallax-img yt-thumbnail" data-yt-id="Lcjw5NQooYM" loading="lazy" decoding="async">
+                    <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
+                    </div>
+                    <div class="card-info"><h3 class="card-info-title">VIDEO: CINEMATIC SHORTS</h3><p class="card-info-desc">Short Films</p></div>
                 </div>
                 
                 <!-- PORTRAIT -->
@@ -201,10 +194,12 @@
                     <div class="card-info"><h3 class="card-info-title">PORTRAIT: LIGHT & SHADOW</h3><p class="card-info-desc">People | Studio & Outdoor</p></div>
                 </div>
                 
-                <!-- アニメーション動画 -->
-                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="NzCtwsILJYg" data-title="Animation" data-meta="Animation Works">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Animation" class="project-image parallax-img yt-thumbnail" data-yt-id="NzCtwsILJYg" loading="lazy" decoding="async"></div>
-                    <div class="card-info"><h3 class="card-info-title">VIDEO: ANIMATION</h3><p class="card-info-desc">Animation Works</p></div>
+                <!-- 【移動】統合：単独シネマティック動画をギャラリー化 (CINEMATIC VLOG) -->
+                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="u38MvsWuaKI" data-videos="u38MvsWuaKI, rbrhPM1Zk-k" data-title="Cinematic Vlog" data-meta="Short Films">
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Vlog" class="project-image parallax-img yt-thumbnail" data-yt-id="u38MvsWuaKI" loading="lazy" decoding="async">
+                    <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
+                    </div>
+                    <div class="card-info"><h3 class="card-info-title">VIDEO: CINEMATIC VLOG</h3><p class="card-info-desc">Short Films</p></div>
                 </div>
 
                 <!-- LANDSCAPE: Nature -->
@@ -252,11 +247,11 @@
                     <div class="card-info"><h3 class="card-info-title">VIDEO: PASS THE MIC</h3><p class="card-info-desc">Event Teasers</p></div>
                 </div>
 
-                <!-- CREATIVE: Fragments -->
-                <div class="masonry-item creative reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Fragments" data-meta="Still Life & Moments" 
-                     data-gallery="images/fragments/DSC02610.jpg, images/fragments/DSC04839.jpg, images/fragments/Glass.jpg, images/fragments/Gozira.jpg, images/fragments/Scissors.jpg, images/fragments/Takadate.jpg, images/fragments/cap.jpg">
-                    <div class="project-card-container parallax-wrapper"><img src="images/fragments/DSC04839.jpg" alt="Fragments" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">FRAGMENTS</h3><p class="card-info-desc">Still Life | Moments</p></div>
+                <!-- 【移動】STREET & LIFE: Cafe (CAFE VIBES) -->
+                <div class="masonry-item street reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Cafe Vibes" data-meta="Lifestyle" 
+                     data-gallery="images/cafe/ADSC06313.jpg, images/cafe/DSC00972.jpg, images/cafe/DSC00976.jpg, images/cafe/DSC00977.jpg, images/cafe/DSC06206.jpg, images/cafe/DSC06221.jpg, images/cafe/DSC06312.jpg, images/cafe/Timeline 1_01_00_08_20.JPG, images/cafe/Timeline 1_01_02_27_10.jpg, images/cafe/Timeline 1_01_02_45_11.jpg, images/cafe/Timeline 1_01_06_43_12.JPG">
+                    <div class="project-card-container parallax-wrapper"><img src="images/cafe/ADSC06313.jpg" alt="Cafe" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">CAFE VIBES</h3><p class="card-info-desc">Interior | Lifestyle</p></div>
                 </div>
                 
                 <!-- 哲学的なムービー -->
@@ -267,7 +262,6 @@
                     <div class="card-info"><h3 class="card-info-title">VIDEO: PHILOSOPHICAL</h3><p class="card-info-desc">Cinematic Thoughts</p></div>
                 </div>
 
-                <!-- LANDSCAPE: Shrine -->
                 <!-- LANDSCAPE: Shrine -->
                 <div class="masonry-item landscape reveal-up project-trigger" data-aspect="0.67" data-type="gallery" data-title="Sacred Silence" data-meta="Shrines & Temples" 
                      data-gallery="images/shrine/FortuneSlip.JPG, images/shrine/Ginzan.jpg, images/shrine/Ginzan2jpg.jpg, images/shrine/Haguro.jpg, images/shrine/Omairi.jpg, images/shrine/grass10.jpg">
@@ -313,11 +307,11 @@
                     <div class="card-info"><h3 class="card-info-title">SUBMERGED FOREST</h3><p class="card-info-desc">Water | Landscape</p></div>
                 </div>
 
-                <!-- STREET & LIFE: Cafe -->
-                <div class="masonry-item street reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Cafe Vibes" data-meta="Lifestyle" 
-                     data-gallery="images/cafe/ADSC06313.jpg, images/cafe/DSC00972.jpg, images/cafe/DSC00976.jpg, images/cafe/DSC00977.jpg, images/cafe/DSC06206.jpg, images/cafe/DSC06221.jpg, images/cafe/DSC06312.jpg, images/cafe/Timeline 1_01_00_08_20.JPG, images/cafe/Timeline 1_01_02_27_10.jpg, images/cafe/Timeline 1_01_02_45_11.jpg, images/cafe/Timeline 1_01_06_43_12.JPG">
-                    <div class="project-card-container parallax-wrapper"><img src="images/cafe/ADSC06313.jpg" alt="Cafe" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
-                    <div class="card-info"><h3 class="card-info-title">CAFE VIBES</h3><p class="card-info-desc">Interior | Lifestyle</p></div>
+                <!-- 【移動】CREATIVE: Fragments (FRAGMENTS) -->
+                <div class="masonry-item creative reveal-up project-trigger" data-aspect="1.5" data-type="gallery" data-title="Fragments" data-meta="Still Life & Moments" 
+                     data-gallery="images/fragments/DSC02610.jpg, images/fragments/DSC04839.jpg, images/fragments/Glass.jpg, images/fragments/Gozira.jpg, images/fragments/Scissors.jpg, images/fragments/Takadate.jpg, images/fragments/cap.jpg">
+                    <div class="project-card-container parallax-wrapper"><img src="images/fragments/DSC04839.jpg" alt="Fragments" class="project-image parallax-img" loading="lazy" decoding="async"><div class="gallery-badge"><i class="fa-regular fa-images"></i></div></div>
+                    <div class="card-info"><h3 class="card-info-title">FRAGMENTS</h3><p class="card-info-desc">Still Life | Moments</p></div>
                 </div>
 
                 <!-- LANDSCAPE: Paddy Field -->
@@ -356,12 +350,10 @@
                     <div class="card-info"><h3 class="card-info-title">VIDEO: CINEMATIC MOMENTS</h3><p class="card-info-desc">Short Films</p></div>
                 </div>
 
-                <!-- 統合：単独シネマティック動画をギャラリー化 -->
-                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="u38MvsWuaKI" data-videos="u38MvsWuaKI, rbrhPM1Zk-k" data-title="Cinematic Vlog" data-meta="Short Films">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Vlog" class="project-image parallax-img yt-thumbnail" data-yt-id="u38MvsWuaKI" loading="lazy" decoding="async">
-                    <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
-                    </div>
-                    <div class="card-info"><h3 class="card-info-title">VIDEO: CINEMATIC VLOG</h3><p class="card-info-desc">Short Films</p></div>
+                <!-- 【移動】アニメーション動画 (ANIMATION) -->
+                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="NzCtwsILJYg" data-title="Animation" data-meta="Animation Works">
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Animation" class="project-image parallax-img yt-thumbnail" data-yt-id="NzCtwsILJYg" loading="lazy" decoding="async"></div>
+                    <div class="card-info"><h3 class="card-info-title">VIDEO: ANIMATION</h3><p class="card-info-desc">Animation Works</p></div>
                 </div>
 
             </div>
