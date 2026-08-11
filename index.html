@@ -96,12 +96,14 @@
         #preloader { position: fixed; inset: 0; z-index: 100000; background-color: var(--bg-color); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease, visibility 0.8s ease; }
         #preloader.hidden { opacity: 0; visibility: hidden; }
         .preloader-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 500; letter-spacing: 0.2em; color: var(--text-main); animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        .preloader-logo { width: 140px; max-width: 30vw; height: auto; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        [data-theme="dark"] .preloader-logo { filter: invert(1); /* ダークモード時にロゴが見えやすいように色を反転させます */ }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
     </style>
 </head>
 <body class="selection:bg-gray-400 selection:text-white">
 
-    <div id="preloader"><div class="preloader-text">REN AIZAWA</div></div>
+    <div id="preloader"><img src="images/logo/dog_logo.PNG" alt="REN AIZAWA" class="preloader-logo"></div>
     <div id="custom-cursor"></div>
 
     <header class="sticky top-0 z-[9901] theme-bg/80 backdrop-blur-lg border-b theme-border transition-all duration-300 load-fade-in">
@@ -354,10 +356,12 @@
                     <div class="card-info"><h3 class="card-info-title">VIDEO: CINEMATIC MOMENTS</h3><p class="card-info-desc">Short Films</p></div>
                 </div>
 
-                <!-- 新規追加：単独シネマティック動画 -->
-                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video" data-video-id="rbrhPM1Zk-k" data-title="Cinematic Vlog" data-meta="Short Film">
-                    <div class="project-card-container parallax-wrapper"><img src="" alt="Vlog" class="project-image parallax-img yt-thumbnail" data-yt-id="rbrhPM1Zk-k" loading="lazy" decoding="async"></div>
-                    <div class="card-info"><h3 class="card-info-title">VIDEO: CINEMATIC VLOG</h3><p class="card-info-desc">Short Film</p></div>
+                <!-- 統合：単独シネマティック動画をギャラリー化 -->
+                <div class="masonry-item cinematography video-only cursor-play-area reveal-up project-trigger" data-aspect="1.77" data-type="video-gallery" data-video-id="u38MvsWuaKI" data-videos="u38MvsWuaKI, rbrhPM1Zk-k" data-title="Cinematic Vlog" data-meta="Short Films">
+                    <div class="project-card-container parallax-wrapper"><img src="" alt="Vlog" class="project-image parallax-img yt-thumbnail" data-yt-id="u38MvsWuaKI" loading="lazy" decoding="async">
+                    <div class="gallery-badge"><i class="fa-solid fa-film"></i></div>
+                    </div>
+                    <div class="card-info"><h3 class="card-info-title">VIDEO: CINEMATIC VLOG</h3><p class="card-info-desc">Short Films</p></div>
                 </div>
 
             </div>
@@ -447,8 +451,11 @@
             }
 
             const preloader = document.getElementById('preloader');
-            window.addEventListener('load', () => { setTimeout(() => { preloader.classList.add('hidden'); setTimeout(() => { preloader.style.display = 'none'; }, 800); }, 400); });
-            setTimeout(() => { preloader.classList.add('hidden'); setTimeout(() => { preloader.style.display = 'none'; }, 800); }, 3000);
+            // ご指定通り、ロード画面を約3秒間（3000ミリ秒）表示してからフェードアウトさせます
+            setTimeout(() => { 
+                preloader.classList.add('hidden'); 
+                setTimeout(() => { preloader.style.display = 'none'; }, 800); 
+            }, 3000);
 
             const htmlEl = document.documentElement;
             const themeToggle = document.getElementById('theme-toggle');
