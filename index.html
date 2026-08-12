@@ -122,52 +122,52 @@
         </div>
     </header>
 
-    <main class="max-w-[1400px] mx-auto px-6 md:px-12 py-12 md:py-20">
+    <!-- メインコンテンツ全体（上部の余白を削除し、動画が上部にくっつくようにする） -->
+    <main class="w-full pb-12 md:pb-20">
 
-        <!-- オープニングセクション (ヒーロービデオ) -->
-        <section class="mb-24 md:mb-32 load-fade-in delay-1">
-            <div class="w-full relative aspect-video overflow-hidden rounded-lg parallax-wrapper shadow-sm cursor-play-area">
-                <!-- autoplay, loop, muted, playsinline をつけることでスマホでも自動再生されます -->
-                <video src="videos/opening_2.mp4" autoplay loop muted playsinline class="w-full h-full object-cover parallax-img"></video>
-            </div>
+        <!-- オープニングセクション (余白なし・全画面フルブリード) -->
+        <section class="w-full relative h-[85vh] md:h-[75vh] min-h-[500px] overflow-hidden parallax-wrapper cursor-play-area mb-24 md:mb-32 load-fade-in delay-1">
+            <video src="videos/opening_2.mp4" autoplay loop muted playsinline class="w-full h-full object-cover parallax-img object-center"></video>
+            <div class="absolute inset-0 bg-black/10 pointer-events-none z-10"></div>
         </section>
 
-        <!-- ABOUT セクション -->
-        <section id="about" class="py-24 md:py-32 border-t theme-border reveal-up">
-            <div class="max-w-[1000px] mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
-                
-                <div class="w-full md:w-2/5 parallax-wrapper rounded-lg overflow-hidden aspect-[3/4] md:sticky md:top-32 shadow-sm">
-                    <img src="images/profile/DSCF1960.jpg" alt="Ren Aizawa" class="parallax-img w-full h-full object-cover" loading="lazy" decoding="async">
-                </div>
-                
-                <div class="w-full md:w-3/5 md:pt-8 text-center md:text-left">
-                    <p class="text-xs uppercase tracking-[0.3em] mb-8" style="color: var(--text-muted);">Biography</p>
+        <!-- ABOUT と WORK は元の max-w-[1400px] の中に戻すためのラッパー -->
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            
+            <!-- ABOUT セクション -->
+            <section id="about" class="py-12 md:py-24 border-t theme-border reveal-up">
+                <div class="max-w-[1000px] mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
                     
-                    <div class="font-jp-serif text-[0.95rem] md:text-[1.05rem] leading-[2.2] md:leading-[2.4] tracking-[0.08em] space-y-8" style="color: var(--text-main);">
-                        <p>福島県いわき市に生まれ、山形県鶴岡市の豊かな自然の中で育つ。</p>
-                        
-                        <p>レンズを通した世界への探求は、愛犬との何気ない日常を永遠に残したいという、ごく個人的で温かな衝動から始まった。<br>
-                        数々のカメラやオールドレンズを渡り歩き、独学で光の捉え方を深めるうちに、そのまなざしは静止画の枠を越え、映像表現へと拡張していく。</p>
-                        
-                        <p>知人のミュージックビデオ制作において撮影アシスタントや照明スタッフとして現場の空気を吸収。そこでの実践的なライティング技術とシネマティックな視点が、現在のスタイルの礎となる。<br>
-                        現在では会社員としての顔を持ちながら、企業向けの講演記録、採用・社内研修用フィルムのディレクションや撮影まで幅広く手掛けている。</p>
+                    <!-- 復活：プロフィール画像 -->
+                    <div class="w-full md:w-2/5 parallax-wrapper rounded-lg overflow-hidden aspect-[3/4] md:sticky md:top-32 shadow-sm">
+                        <img src="images/profile/DSCF1960.jpg" alt="Ren Aizawa" class="parallax-img w-full h-full object-cover" loading="lazy" decoding="async">
                     </div>
+                    
+                    <div class="w-full md:w-3/5 md:pt-8 text-center md:text-left">
+                        <p class="text-xs uppercase tracking-[0.3em] mb-8" style="color: var(--text-muted);">Biography</p>
+                        
+                        <div class="font-jp-serif text-[0.95rem] md:text-[1.05rem] leading-[2.2] md:leading-[2.4] tracking-[0.08em] space-y-8" style="color: var(--text-main);">
+                            <p>福島県いわき市に生まれ、山形県鶴岡市の豊かな自然の中で育つ。</p>
+                            
+                            <p>レンズを通した世界への探求は、愛犬との何気ない日常を永遠に残したいという、ごく個人的で温かな衝動から始まった。<br>
+                            数々のカメラやオールドレンズを渡り歩き、独学で光の捉え方を深めるうちに、そのまなざしは静止画の枠を越え、映像表現へと拡張していく。</p>
+                            
+                            <p>知人のミュージックビデオ制作において撮影アシスタントや照明スタッフとして現場の空気を吸収。そこでの実践的なライティング技術とシネマティックな視点が、現在のスタイルの礎となる。<br>
+                            現在では会社員としての顔を持ちながら、企業向けの講演記録、採用・社内研修用フィルムのディレクションや撮影まで幅広く手掛けている。</p>
+                        </div>
 
-                    <div class="mt-12 md:mt-16 pt-12 md:pt-16 border-t theme-border font-jp-serif text-[1.1rem] md:text-[1.2rem] leading-[2.0] tracking-[0.1em] font-medium" style="color: var(--text-main);">
-                        <p>愛犬を見つめるパーソナルな視点と、プロの現場で培われた確かな技術。<br>
-                        その交差する場所で、飾らない日常の美しさと、そこに潜む物語を紡ぎ出している。</p>
+                        <div class="mt-12 md:mt-16 pt-12 md:pt-16 border-t theme-border font-jp-serif text-[1.1rem] md:text-[1.2rem] leading-[2.0] tracking-[0.1em] font-medium" style="color: var(--text-main);">
+                            <p>愛犬を見つめるパーソナルな視点と、プロの現場で培われた確かな技術。<br>
+                            その交差する場所で、飾らない日常の美しさと、そこに潜む物語を紡ぎ出している。</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- ワークセクション -->
-        <section id="work" class="pt-24 border-t theme-border reveal-up">
-            <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-12 gap-8">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif tracking-wide">SELECTED WORKS</h2>
-                <div class="flex flex-wrap gap-4 md:gap-6" id="filters">
-                    <button class="filter-tab active" data-filter="all">ALL</button>
-                    <!-- 動画のみのフィルターを新設 -->
+            <!-- ワークセクション -->
+            <section id="work" class="pt-24 border-t theme-border reveal-up">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-12 gap-8">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif tracking-wide">SELECTED WORKS</h2>
                     <button class="filter-tab" data-filter="video-only">VIDEO</button>
                     <button class="filter-tab" data-filter="cinematography">CINEMATOGRAPHY</button>
                     <button class="filter-tab" data-filter="portrait">PORTRAIT</button>
