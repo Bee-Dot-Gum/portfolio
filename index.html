@@ -131,8 +131,8 @@
             <div class="absolute inset-0 bg-black/10 pointer-events-none z-10"></div>
         </section>
 
-        <!-- ABOUT と WORK は元の max-w-[1400px] の中に戻すためのラッパー -->
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+        <!-- ABOUT と WORK のラッパー：以前の美しい余白(1400pxベース)に戻し、閉じタグのバグを修正しました -->
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
             
             <!-- ABOUT セクション -->
             <section id="about" class="py-12 md:py-24 border-t theme-border reveal-up">
@@ -168,14 +168,18 @@
             <section id="work" class="pt-24 border-t theme-border reveal-up">
                 <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-12 gap-8">
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif tracking-wide">SELECTED WORKS</h2>
-                    <button class="filter-tab" data-filter="video-only">VIDEO</button>
-                    <button class="filter-tab" data-filter="cinematography">CINEMATOGRAPHY</button>
-                    <button class="filter-tab" data-filter="portrait">PORTRAIT</button>
-                    <button class="filter-tab" data-filter="landscape">LANDSCAPE</button>
-                    <button class="filter-tab" data-filter="street">STREET & LIFE</button>
-                    <button class="filter-tab" data-filter="creative">CREATIVE</button>
+                    <div class="flex flex-wrap gap-4 md:gap-6" id="filters">
+                        <!-- 復活：ALL フィルター -->
+                        <button class="filter-tab active" data-filter="all">ALL</button>
+                        <button class="filter-tab" data-filter="video-only">VIDEO</button>
+                        <button class="filter-tab" data-filter="cinematography">CINEMATOGRAPHY</button>
+                        <button class="filter-tab" data-filter="portrait">PORTRAIT</button>
+                        <button class="filter-tab" data-filter="landscape">LANDSCAPE</button>
+                        <button class="filter-tab" data-filter="street">STREET & LIFE</button>
+                        <button class="filter-tab" data-filter="creative">CREATIVE</button>
+                    </div>
                 </div>
-            </div>
+                <!-- ！！！ここで誤って </div> を閉じてしまっていたバグを削除しました ！！！ -->
 
             <div class="masonry-grid" id="portfolio-grid">
                 
@@ -358,6 +362,9 @@
 
             </div>
         </section>
+        
+        <!-- ！！！ ABOUTとWORKを囲うラッパーを正しくここで閉じます ！！！ -->
+        </div>
 
     </main>
 
