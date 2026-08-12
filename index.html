@@ -125,8 +125,8 @@
     <!-- メインコンテンツ全体（上部の余白を削除し、動画が上部にくっつくようにする） -->
     <main class="w-full pb-12 md:pb-20">
 
-        <!-- オープニングセクション (余白なし・全画面フルブリード) -->
-        <section class="w-full relative h-[85vh] md:h-[75vh] min-h-[500px] overflow-hidden parallax-wrapper cursor-play-area mb-24 md:mb-32 load-fade-in delay-1">
+        <!-- オープニングセクション (スマホは9:16、PCは16:9で完全にアスペクト比を固定) -->
+        <section class="w-full relative aspect-[9/16] md:aspect-video overflow-hidden parallax-wrapper cursor-play-area mb-24 md:mb-32 load-fade-in delay-1">
             <video src="videos/opening_2.mp4" autoplay loop muted playsinline class="w-full h-full object-cover parallax-img object-center"></video>
             <div class="absolute inset-0 bg-black/10 pointer-events-none z-10"></div>
         </section>
